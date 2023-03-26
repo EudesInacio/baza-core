@@ -1,0 +1,177 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, AuthoringTagHelpers
+
+@{    
+    ViewData["Title"] = "AdminEvents";
+    Layout = "../Shared/_Layout.cshtml";
+    ViewBag.CurrentMenu = 1;
+}
+
+<div class="container-fluid">
+
+    @*<!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
+    <p class="mb-4">
+        DataTables is a third party plugin that is used to generate the demo table below.
+        For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.
+    </p>*@
+    <br />
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Lista dos Eventos</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                    <div class="row"><div class="col-sm-12 col-md-6">
+                        <div class="dataTables_length" id="dataTable_length">
+                            <label>Mostrar <select name="dataTable_length" aria-controls="dataTable" class="custom-select custom-select-sm form-control form-control-sm">
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select> Eventos</label>
+                        </div></div><div class="col-sm-12 col-md-6"><div id="dataTable_filter" class="dataTables_filter"><label>Pesquisar:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable"></label></div></div></div><div class="row">
+                        <div class="col-sm-12">
+                            <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                                <thead>
+                                    <tr role="row">
+                                        <th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 56.3333px;">Título</th>
+                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.3333px;">Data</th>
+                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.3333px;">Imagem</th>
+                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 49.3333px;">Banner</th>
+                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 30.3333px;">Organizador</th>
+                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 68.3333px;">Categoria</th>
+                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 66.3333px;">Endereço</th>
+                                        <th class="sorting" tabindex="0" style="width:120px !important;" aria-controls="dataTable" rowspan="1" aria-label="Salary: activate to sort column ascending" style="width: 66.3333px;">&nbsp;</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th rowspan="1" colspan="1">Título</th>
+                                        <th rowspan="1" colspan="1">Data</th>
+                                        <th rowspan="1" colspan="1">Imagem</th>
+                                        <th rowspan="1" colspan="1">Banner</th>
+                                        <th rowspan="1" colspan="1">Organizador</th>
+                                        <th rowspan="1" colspan="1">Categoria</th>
+                                        <th rowspan="1" colspan="1">Endereço</th>
+                                        <th rowspan="1" style="width:120px !important;">&nbsp;</th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    <tr class="odd">
+                                        <td class="sorting_1">Era uma vez na Dira</td>
+                                        <td>01-04-2023</td>                                        
+                                        <td>[Cartaz]</td>
+                                        <td>[Banner]</td>
+                                        <td>Viana Eventos LDA</td>
+                                        <td>Festas</td>
+                                        <td>Salão de Festas Suculândia</td>
+                                        <td>
+                                            <a href="#" title="Novo evento" class="btn btn-primary btn-circle"><i class="fa fa-plus"></i></a> <a href="#" title="Editar" class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></a> <a href="#" title="Remover" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr class="odd">
+                                        <td class="sorting_1">Era uma vez na Dira</td>
+                                        <td>01-04-2023</td>                                        
+                                        <td>[Cartaz]</td>
+                                        <td>[Banner]</td>
+                                        <td>Viana Eventos LDA</td>
+                                        <td>Festas</td>
+                                        <td>Salão de Festas Suculândia</td>
+                                        <td>
+                                            <a href="#" title="Novo evento" class="btn btn-primary btn-circle"><i class="fa fa-plus"></i></a> <a href="#" title="Editar" class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></a> <a href="#" title="Remover" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr class="odd">
+                                        <td class="sorting_1">Era uma vez na Dira</td>
+                                        <td>01-04-2023</td>
+                                        <td>[Cartaz]</td>
+                                        <td>[Banner]</td>
+                                        <td>Viana Eventos LDA</td>
+                                        <td>Festas</td>
+                                        <td>Salão de Festas Suculândia</td>
+                                        <td>
+                                            <a href="#" title="Novo evento" class="btn btn-primary btn-circle"><i class="fa fa-plus"></i></a> <a href="#" title="Editar" class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></a> <a href="#" title="Remover" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr class="odd">
+                                        <td class="sorting_1">Era uma vez na Dira</td>
+                                        <td>01-04-2023</td>
+                                        <td>[Cartaz]</td>
+                                        <td>[Banner]</td>
+                                        <td>Viana Eventos LDA</td>
+                                        <td>Festas</td>
+                                        <td>Salão de Festas Suculândia</td>
+                                        <td>
+                                            <a href="#" title="Novo evento" class="btn btn-primary btn-circle"><i class="fa fa-plus"></i></a> <a href="#" title="Editar" class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></a> <a href="#" title="Remover" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr class="odd">
+                                        <td class="sorting_1">Era uma vez na Dira</td>
+                                        <td>01-04-2023</td>
+                                        <td>[Cartaz]</td>
+                                        <td>[Banner]</td>
+                                        <td>Viana Eventos LDA</td>
+                                        <td>Festas</td>
+                                        <td>Salão de Festas Suculândia</td>
+                                        <td>
+                                            <a href="#" title="Novo evento" class="btn btn-primary btn-circle"><i class="fa fa-plus"></i></a> <a href="#" title="Editar" class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></a> <a href="#" title="Remover" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr class="odd">
+                                        <td class="sorting_1">Era uma vez na Dira</td>
+                                        <td>01-04-2023</td>
+                                        <td>[Cartaz]</td>
+                                        <td>[Banner]</td>
+                                        <td>Viana Eventos LDA</td>
+                                        <td>Festas</td>
+                                        <td>Salão de Festas Suculândia</td>
+                                        <td>
+                                            <a href="#" title="Novo evento" class="btn btn-primary btn-circle"><i class="fa fa-plus"></i></a> <a href="#" title="Editar" class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></a> <a href="#" title="Remover" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></a>
+                                        </td>
+                                    </tr>                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Mostrando 1 to 10 of 57 eventos</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
+                                <ul class="pagination">
+                                    <li class="paginate_button page-item previous disabled" id="dataTable_previous">
+                                        <a href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Anteriror</a>
+                                    </li>
+                                    <li class="paginate_button page-item active">
+                                        <a href="#" aria-controls="dataTable" data-dt-idx="1" tabindex="0" class="page-link">1</a>
+                                    </li>
+                                    <li class="paginate_button page-item ">
+                                        <a href="#" aria-controls="dataTable" data-dt-idx="2" tabindex="0" class="page-link">2</a>
+                                    </li>
+                                    <li class="paginate_button page-item ">
+                                        <a href="#" aria-controls="dataTable" data-dt-idx="3" tabindex="0" class="page-link">3</a>
+                                    </li>
+                                    <li class="paginate_button page-item ">
+                                        <a href="#" aria-controls="dataTable" data-dt-idx="4" tabindex="0" class="page-link">4</a>
+                                    </li>
+                                    <li class="paginate_button page-item ">
+                                        <a href="#" aria-controls="dataTable" data-dt-idx="5" tabindex="0" class="page-link">5</a>
+                                    </li>
+                                    <li class="paginate_button page-item ">
+                                        <a href="#" aria-controls="dataTable" data-dt-idx="6" tabindex="0" class="page-link">6</a>
+                                    </li>
+                                    <li class="paginate_button page-item next" id="dataTable_next">
+                                        <a href="#" aria-controls="dataTable" data-dt-idx="7" tabindex="0" class="page-link">Próxima</a>
+                                    </li>
+                                </ul>
+                                                            </div>
+                                                            </div>
+                                                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+
+
