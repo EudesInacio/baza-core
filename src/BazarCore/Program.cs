@@ -81,7 +81,7 @@ namespace BazarCore.Application
 
             //builder.Services.AddHttpContextAccessor();
             builder.Services.AddDbContext<MyContext>(options =>
-                   options.UseSqlServer(builder.Configuration.GetConnectionString("conn2")));
+                   options.UseSqlServer(builder.Configuration.GetConnectionString("conn")));
             builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             builder.Services.AddScoped(typeof(CategoryValidator));
             builder.Services.AddScoped(typeof(EventValidator));
