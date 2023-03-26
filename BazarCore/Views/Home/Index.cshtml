@@ -1,0 +1,456 @@
+﻿@using BazarCore.Models.DTO
+@{
+    Layout = "../Shared/_LayoutHome.cshtml";
+    ViewData["Title"] = "Inicio";
+    ViewBag.CurrentMenu = 1;
+    var categories = ViewBag.Categories as List<CategoryDTO>;
+    var upcomingEvents = ViewBag.UpComeEvents as PaginatedList<EventItemDTO>;
+    Dictionary<string, string> timeFilters = new()
+    {
+        {"anytime","Qualquer altura"},
+        {"today","Hoje"},
+        {"tomorrow","Amanhã"},
+        {"thisWeek","Essa semana"},
+        {"thisWeekEnd","Esse final de semana"},
+        {"nextWeek","Próxima semana"},
+        {"nextMonth","Próximo mês"}
+    };
+}
+<div class="inside-content">
+    <partial name="../Shared/_HeaderHome.cshtml">
+        <div data-elementor-type="wp-page" data-elementor-id="85" class="elementor elementor-85">
+            <div class="elementor-inner">
+                <div class="elementor-section-wrap">
+                    <section class="elementor-section elementor-top-section elementor-element elementor-element-5dba6ce elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="5dba6ce" data-element_type="section" data-settings='{"background_background":"classic"}'>
+                        <div class="elementor-background-overlay"></div>
+                        <div class="elementor-container elementor-column-gap-default">
+                            <div class="elementor-row">
+                                <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3bac364" data-id="3bac364" data-element_type="column">
+                                    <div class="elementor-column-wrap elementor-element-populated">
+                                        <div class="elementor-widget-wrap">
+                                            <div class="elementor-element elementor-element-b4a2780 elementor-widget elementor-widget-heading" data-id="b4a2780" data-element_type="widget" data-widget_type="heading.default">
+                                                <div class="elementor-widget-container">
+                                                    <h2 class="elementor-heading-title elementor-size-default">Os melhores eventos aqui</h2>
+                                                </div>
+                                            </div>
+                                            <div class="elementor-element elementor-element-60dd863 elementor-widget elementor-widget-heading" data-id="60dd863" data-element_type="widget" data-widget_type="heading.default">
+                                                <div class="elementor-widget-container">
+                                                    <h2 class="elementor-heading-title elementor-size-default">Fácil de pesquisar, basta digitar o nome do evento</h2>
+                                                </div>
+                                            </div>
+                                            <div class="elementor-element elementor-element-f1cd515 elementor-widget elementor-widget-el_search_form" data-id="f1cd515" data-element_type="widget" data-widget_type="el_search_form.default">
+                                                <div class="elementor-widget-container">
+                                                    <div class="elementor_search_form">
+                                                        <div class="el_search_filters wrap_form_search  type1  four_column ">
+                                                            <form enctype="multipart/form-data" method="GET" name="search_event" action="/eventos" autocomplete="off" autocorrect="off" autocapitalize="none">
+                                                                <div class="name_event field_search"><i class="fa-solid fa-magnifying-glass"></i> <input type="text" class="form-control" placeholder="Pesquisar..." name="title" value="" autocomplete="off" autocorrect="off" autocapitalize="none"></div>
+                                                                <div class="categories field_search">
+                                                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                                                    <select name="categoryId" id="cat" class="postform">
+                                                                        <option class="level-0" value="0">Todas Categorias</option>
+                                                                        @foreach (var item in categories)
+                                                                        {
+                                                                            <option class="level-0" value="@item.Id">@item.Name</option>
+                                                                        }
+                                                                    </select>
+                                                                </div>
+                                                                <div class="el_all_time field_search">
+                                                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                                                    <select name="eventTimeFilter">
+                                                                        @foreach (var item in timeFilters)
+                                                                        {
+
+                                                                            <option value="@item.Key">@item.Value</option>
+                                                                        }
+                                                                    </select>
+                                                                </div>
+                                                                <div class="el_submit_search"> <input type="submit" value="Pesquisar" class="second_font"></div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="elementor-element elementor-element-f84ec89 elementor-widget elementor-widget-el_name_event_slider" data-id="f84ec89" data-element_type="widget" data-widget_type="el_name_event_slider.default">
+                                                <div class="elementor-widget-container">
+                                                    <div class="el_name_event_slider">
+                                                        <div class="wrap_item owl-carousel owl-theme owl-loaded" data-owl='{"items":1,"singleItem":1,"autoplaySpeed":1000,"autoplayTimeout":3000,"autoplay":true,"loop":true,"nav":false,"dots":false,"mouseDrag":true,"rtl":false}'> <a class="item" href="seat-map.html"> <span class="title"> <i class="fa-solid fa-calendar-days"></i> Seat Map </span> <span class="date"> Setembro 14, 2023 </span> </a> <a class="item" href="virtual-event.html"> <span class="title"> <i class="icon_info_alt"></i>Drena e Amor</span> <span class="date"> Fevereiro 18, 2023 </span> </a> <a class="item" href="free-event.html"> <span class="title"> <i class="icon_info_alt"></i> Ilha de Luanda </span> <span class="date"> February 19, 2023 </span> </a> <a class="item" href="the-2019-global-education-conference.html"> <span class="title"> <i class="icon_info_alt"></i> The 2020 Global... </span> <span class="date"> April 23, 2022 </span> </a> <a class="item" href="catwalk-event-management.html"> <span class="title"> <i class="icon_info_alt"></i> The Catwalk Event... </span> <span class="date"> April 30, 2022 </span> </a></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="elementor-section elementor-top-section elementor-element elementor-element-62b44c3 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="62b44c3" data-element_type="section">
+                        <div class="elementor-container elementor-column-gap-default">
+                            <div class="elementor-row">
+                                @foreach (var item in categories)
+                                {
+                                    <div class="elementor-column elementor-col-16 elementor-top-column elementor-element elementor-element-bd71af5" data-id="bd71af5" data-element_type="column">
+                                        <div class="elementor-column-wrap elementor-element-populated">
+                                            <div class="elementor-widget-wrap">
+                                                <div class="elementor-element elementor-element-1788a55 elementor-widget elementor-widget-el_category_event" data-id="1788a55" data-element_type="widget" data-widget_type="el_category_event.default">
+                                                    <div class="elementor-widget-container">
+                                                        <a href="/" class="el-event-category">
+                                                            <div class="el-media blue-img"> <img decoding="async" src="@item.Icon" alt="Business"></div>
+                                                            <div class="content-cat">
+                                                                <h3 class="cate-name second_font">@item.Name</h3>
+                                                                <p class="count-event"> @item.CountEvents <span> Eventos </span></p>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </section>
+                    <section class="elementor-section elementor-top-section elementor-element elementor-element-0ead756 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="0ead756" data-element_type="section" data-settings='{"background_background":"classic"}'>
+                        <div class="elementor-container elementor-column-gap-default">
+                            <div class="elementor-row">
+                                <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-1a42440" data-id="1a42440" data-element_type="column">
+                                    <div class="elementor-column-wrap elementor-element-populated">
+                                        <div class="elementor-widget-wrap">
+                                            <div class="elementor-element elementor-element-3f4f898 elementor-widget elementor-widget-ova_heading" data-id="3f4f898" data-element_type="widget" data-widget_type="ova_heading.default">
+                                                <div class="elementor-widget-container">
+                                                    <div class="ova-heading">
+                                                        <h3 class="title second_font">Próximos eventos</h3>
+                                                        <p class="sub-title ">Próximos momentos inesquecíveis.</p>
+                                                        <span class="line "></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="elementor-element elementor-element-26a38fd elementor-widget elementor-widget-ova_event_slider" data-id="26a38fd" data-element_type="widget" data-settings='{"pause_on_hover":"yes","infinite":"yes"}' data-widget_type="ova_event_slider.default">
+                                                <div class="elementor-widget-container">
+                                                    <div class="ova-event-slider">
+                                                        <ul class=" event_archive type1 hide_dots event-slider  owl-carousel  owl-loaded" data-options='{"slideBy":"1","margin":45,"autoplayHoverPause":true,"loop":true,"autoplay":false,"autoplayTimeout":3000,"smartSpeed":500,"nav":true,"dots":true}'>
+                                                            @foreach (var item in upcomingEvents.Items)
+                                                            {
+                                                                <li class="event_entry ">
+                                                                    <div class="event_item type1">
+                                                                        <div class="event_thumbnail">
+                                                                            <div class="thumbnail_figure"> <a href="/eventos/detalhes/@item.Id"> <img decoding="async" src="@item.Image" alt="@item.Title"> </a></div>
+                                                                            <div class="img-author"> <a href="%20.html"> <img decoding="async" src="@item.OrganizerLogo" alt="@item.Organizer"> </a></div>
+                                                                            <span class="event_meta_cat"> <a style="background-color: #81df93" href="/eventos/detalhes/@item.Id">@item.Category</a> </span> <a href="javascript:%20void(0)" class="event-loop-favourite el-wishlist " data-id="2331">@* <i class="fa fa-heart-o"></i>*@ </a>
+                                                                        </div>
+                                                                        <div class="event_detail">
+                                                                            <h2 class="loop_title"> <a class="second_font" href="/eventos/detalhes/@item.Id">@item.Title</a></h2>
+                                                                            <div class="event-location-time">
+                                                                                <div class="event-time"> <span class="event-icon"><i class="fa fa-clock"></i></span> <span class="time"> <span class="start-time">@item.DateStart</span><span class="timezone"></span> </span></div>
+                                                                                <div class="location-rating">
+                                                                                    <div class="event_location">
+                                                                                        <i class="fa fa-location-dot"></i> @item.FullAdress
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="meta-footer"> <span class="event-button"> <a class="second_font" href="/eventos/detalhes/@item.Id">Ingressos</a> </span> <span class="event_loop_price second_font">@item.PriceMin</span> </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                            }
+
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="elementor-section elementor-top-section elementor-element elementor-element-cf85c38 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="cf85c38" data-element_type="section" data-settings='{"background_background":"classic"}'>
+                        <div class="elementor-container elementor-column-gap-default">
+                            <div class="elementor-row">
+                                <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-bdbf42f" data-id="bdbf42f" data-element_type="column">
+                                    <div class="elementor-column-wrap elementor-element-populated">
+                                        <div class="elementor-widget-wrap">
+                                            <div class="elementor-element elementor-element-5d12c29 elementor-widget elementor-widget-ova_heading" data-id="5d12c29" data-element_type="widget" data-widget_type="ova_heading.default">
+                                                <div class="elementor-widget-container">
+                                                    <div class="ova-heading">
+                                                        <h3 class="title second_font">Como funciona?</h3>
+                                                        <p class="sub-title ">Saiba como funciona o Baza</p>
+                                                        <span class="line "></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <section class="elementor-section elementor-inner-section elementor-element elementor-element-35eb568 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="35eb568" data-element_type="section">
+                                                <div class="elementor-container elementor-column-gap-default">
+                                                    <div class="elementor-row">
+                                                        <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-ae3d0ca" data-id="ae3d0ca" data-element_type="column">
+                                                            <div class="elementor-column-wrap elementor-element-populated">
+                                                                <div class="elementor-widget-wrap">
+                                                                    <div class="elementor-element elementor-element-a0d17f3 elementor-widget elementor-widget-ova_feature" data-id="a0d17f3" data-element_type="widget" data-widget_type="ova_feature.default">
+                                                                        <div class="elementor-widget-container">
+                                                                            <div class="ova-feature">
+                                                                                <div class="ova-media">
+                                                                                    <div class="wp-media"> <img class="blue-img" decoding="async" src="images/06-feature_1.png" alt=""></div>
+                                                                                </div>
+                                                                                <div class="info">
+                                                                                    <h3 class="title">Fácil</h3>
+                                                                                    <p class="sub-title">Encontre facilmente seu evento por meio do sistema de pesquisa com vários parâmetros.</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-7481c5d" data-id="7481c5d" data-element_type="column">
+                                                            <div class="elementor-column-wrap elementor-element-populated">
+                                                                <div class="elementor-widget-wrap">
+                                                                    <div class="elementor-element elementor-element-77e9d6a elementor-widget elementor-widget-ova_feature" data-id="77e9d6a" data-element_type="widget" data-widget_type="ova_feature.default">
+                                                                        <div class="elementor-widget-container">
+                                                                            <div class="ova-feature">
+                                                                                <div class="ova-media">
+                                                                                    <div class="wp-media"> <img class="blue-img" decoding="async" src="images/06-feature_2.png" alt=""></div>
+                                                                                </div>
+                                                                                <div class="info">
+                                                                                    <h3 class="title">Consultar agenda</h3>
+                                                                                    <p class="sub-title">Saiba quando será o próximo momento</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-6159677" data-id="6159677" data-element_type="column">
+                                                            <div class="elementor-column-wrap elementor-element-populated">
+                                                                <div class="elementor-widget-wrap">
+                                                                    <div class="elementor-element elementor-element-f48b018 elementor-widget elementor-widget-ova_feature" data-id="f48b018" data-element_type="widget" data-widget_type="ova_feature.default">
+                                                                        <div class="elementor-widget-container">
+                                                                            <div class="ova-feature">
+                                                                                <div class="ova-media">
+                                                                                    <div class="wp-media"> <img class="blue-img" decoding="async" src="images/06-feature_3.png" alt=""></div>
+                                                                                </div>
+                                                                                <div class="info">
+                                                                                    <h3 class="title">Adquira Ingressoss</h3>
+                                                                                    <p class="sub-title">Após a compra com sucesso, você receberá o Ingressos por e-mail ou fará o download em sua conta</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="elementor-section elementor-top-section elementor-element elementor-element-d080087 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="d080087" data-element_type="section" data-settings='{"background_background":"classic"}'>
+                        <div class="elementor-container elementor-column-gap-default">
+                            <div class="elementor-row">
+                                <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-8c0dd7b" data-id="8c0dd7b" data-element_type="column">
+                                    <div class="elementor-column-wrap elementor-element-populated">
+                                        <div class="elementor-widget-wrap">
+                                            <div class="elementor-element elementor-element-f6b4c7f elementor-widget elementor-widget-ova_heading" data-id="f6b4c7f" data-element_type="widget" data-widget_type="ova_heading.default">
+                                                <div class="elementor-widget-container">
+                                                    <div class="ova-heading">
+                                                        <h3 class="title second_font">Lugares mais visitados</h3>
+                                                        <p class="sub-title ">Eventos e momentos aconteceram nessas cidades</p>
+                                                        <span class="line "></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="elementor-section elementor-top-section elementor-element elementor-element-aa9efd6 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="aa9efd6" data-element_type="section" data-settings='{"background_background":"classic"}'>
+                        <div class="elementor-container elementor-column-gap-default">
+                            <div class="elementor-row">
+                                <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-e66baa1" data-id="e66baa1" data-element_type="column">
+                                    <div class="elementor-column-wrap elementor-element-populated">
+                                        <div class="elementor-widget-wrap">
+                                            <div class="elementor-element elementor-element-cbaec0a elementor-widget elementor-widget-el_location_event" data-id="cbaec0a" data-element_type="widget" data-settings='{"pause_on_hover":"yes","infinite":"yes","autoplay":"yes","autoplay_speed":5000}' data-widget_type="el_location_event.default">
+                                                <div class="elementor-widget-container">
+                                                    <div class="el-event-venue">
+                                                        <div class="event-venue-slide owl-carousel  owl-loaded" data-options='{"slideBy":"1","margin":30,"autoplayHoverPause":true,"loop":true,"autoplay":true,"autoplayTimeout":5000,"smartSpeed":500,"dots":true,"nav":false}'>
+                                                            <div class="item-venue">
+                                                                <div class="el-media"> <a href="?status=upcoming.html"> <img decoding="async" src="images/09-venue_1.jpg" alt="Texas"> </a></div>
+                                                                <div class="el-content">
+                                                                    <h3 class="venue-name"><a class="second_font" href="?status=upcoming.html">Luanda</a></h3>
+                                                                    <p class="count-event">0<span>Eventos</span></p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="item-venue">
+                                                                <div class="el-media"> <a href="?event_state=california.html"> <img decoding="async" src="images/09-venue_2.jpg" alt="California"> </a></div>
+                                                                <div class="el-content">
+                                                                    <h3 class="venue-name"><a class="second_font" href="?event_state=california.html">Benguela</a></h3>
+                                                                    <p class="count-event">3<span>Eventos</span></p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="item-venue">
+                                                                <div class="el-media"> <a href="?status=upcoming.html"> <img decoding="async" src="images/09-venue_3.jpg" alt="Washington"> </a></div>
+                                                                <div class="el-content">
+                                                                    <h3 class="venue-name"><a class="second_font" href="?status=upcoming.html">Huambo</a></h3>
+                                                                    <p class="count-event">1<span>Eventos</span></p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="item-venue">
+                                                                <div class="el-media"> <a href="?event_state=nevada.html"> <img decoding="async" src="images/09-venue_4.jpg" alt="Nevada"> </a></div>
+                                                                <div class="el-content">
+                                                                    <h3 class="venue-name"><a class="second_font" href="?event_state=nevada.html">Huíla</a></h3>
+                                                                    <p class="count-event">1<span>Eventos</span></p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="item-venue">
+                                                                <div class="el-media"> <a href="?status=upcoming.html"> <img decoding="async" src="images/09-venue_6.jpg" alt="Utah"> </a></div>
+                                                                <div class="el-content">
+                                                                    <h3 class="venue-name"><a class="second_font" href="?status=upcoming.html">Malange</a></h3>
+                                                                    <p class="count-event">0<span>Eventos</span></p>
+                                                                </div>
+                                                            </div>
+                                                            <!-- <div class="item-venue">
+                                                               <div class="el-media"> <a href="?event_state=new-mexico.html"> <img decoding="async" src="images/09-venue_7.jpg" alt="New Mexico"> </a></div>
+                                                               <div class="el-content">
+                                                                  <h3 class="venue-name"><a class="second_font" href="?event_state=new-mexico.html">New Mexico</a></h3>
+                                                                  <p class="count-event">1<span>Eventos</span></p>
+                                                               </div>
+                                                            </div>
+                                                            <div class="item-venue">
+                                                               <div class="el-media"> <a href="?status=upcoming.html"> <img decoding="async" src="images/09-venue_3.jpg" alt="Colorado"> </a></div>
+                                                               <div class="el-content">
+                                                                  <h3 class="venue-name"><a class="second_font" href="?status=upcoming.html">Colorado</a></h3>
+                                                                  <p class="count-event">2<span>Eventos</span></p>
+                                                               </div> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+                </div>
+                <section class="elementor-section elementor-top-section elementor-element elementor-element-9b59c93 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="9b59c93" data-element_type="section" data-settings='{"background_background":"classic"}'>
+                    <div class="elementor-container elementor-column-gap-default">
+                        <div class="elementor-row">
+                            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-55693fb" data-id="55693fb" data-element_type="column">
+                                <div class="elementor-column-wrap elementor-element-populated">
+                                    <div class="elementor-widget-wrap">
+                                        <div class="elementor-element elementor-element-8e2c888 elementor-widget elementor-widget-ova_heading" data-id="8e2c888" data-element_type="widget" data-widget_type="ova_heading.default">
+                                            <div class="elementor-widget-container">
+                                                <div class="ova-heading">
+                                                    <h3 class="title second_font">Últimas Notícias</h3>
+                                                    <p class="sub-title ">Novidades do nosso blog</p>
+                                                    <span class="line "></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="elementor-element elementor-element-a79e02f elementor-widget elementor-widget-ova_blog_slider" data-id="a79e02f" data-element_type="widget" data-settings='{"autoplay_speed":6000,"pause_on_hover":"yes","infinite":"yes","autoplay":"yes"}' data-widget_type="ova_blog_slider.default">
+                                            <div class="elementor-widget-container">
+                                                <div class="ova-blog-slider">
+                                                    <div class="blog-slider  owl-carousel owl-theme owl-loaded" data-options='{"slideBy":"1","margin":45,"autoplayHoverPause":true,"loop":true,"autoplay":true,"autoplayTimeout":6000,"smartSpeed":500,"nav":false,"dots":true,"response_desk":"3","response_tablet":"2","response_mobile":"1","rtl":false}'>
+                                                        <div class="item-blog">
+                                                            <div class="ova-media"> <img decoding="async" src="images/06-blog_3.jpg" alt="New York Home Fashion Week"></div>
+                                                            <div class="content">
+                                                                <div class="post-meta-blog"> <span class="category"> <i class="flaticon-gift-box-outline"></i> <a href="travel.html" rel="category tag">Travel</a> <span class="meta-slash">|</span> </span> <span class="author"> <span class="left"><i class="flaticon-clock"></i></span> <span class="right">June 25, 2019</span> </span></div>
+                                                                <div class="title">
+                                                                    <h3><a class="second_font" href="new-york-home-fashion-week-4.html">New York Home Fashion Week</a></h3>
+                                                                </div>
+                                                                <div class="excerpt">
+                                                                    <p>Aenean tincidunt dictum volutpat. Suspendisse potenti. Duis sit amet</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-blog">
+                                                            <div class="ova-media"> <img decoding="async" src="images/06-blog_4.jpg" alt="Exhibition Excellence Awards"></div>
+                                                            <div class="content">
+                                                                <div class="post-meta-blog"> <span class="category"> <i class="flaticon-gift-box-outline"></i> <a href="travel.html" rel="category tag">Travel</a> <span class="meta-slash">|</span> </span> <span class="author"> <span class="left"><i class="flaticon-clock"></i></span> <span class="right">June 25, 2019</span> </span></div>
+                                                                <div class="title">
+                                                                    <h3><a class="second_font" href="exhibition-excellence-awards-2.html">Exhibition Excellence Awards</a></h3>
+                                                                </div>
+                                                                <div class="excerpt">
+                                                                    <p>Aenean tincidunt dictum volutpat. Suspendisse potenti. Duis sit amet</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-blog">
+                                                            <div class="ova-media"> <img decoding="async" src="images/06-blog_2.jpg" alt="New York Home Fashion Week"></div>
+                                                            <div class="content">
+                                                                <div class="post-meta-blog"> <span class="category"> <i class="flaticon-gift-box-outline"></i> <a href="travel.html" rel="category tag">Travel</a> <span class="meta-slash">|</span> </span> <span class="author"> <span class="left"><i class="flaticon-clock"></i></span> <span class="right">June 25, 2019</span> </span></div>
+                                                                <div class="title">
+                                                                    <h3><a class="second_font" href="new-york-home-fashion-week-3.html">New York Home Fashion Week</a></h3>
+                                                                </div>
+                                                                <div class="excerpt">
+                                                                    <p>Aenean tincidunt dictum volutpat. Suspendisse potenti. Duis sit amet</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-blog">
+                                                            <div class="ova-media"> <img decoding="async" src="images/06-blog_6-710x480.jpg" alt="The International Food &amp; Drink"></div>
+                                                            <div class="content">
+                                                                <div class="post-meta-blog"> <span class="category"> <i class="flaticon-gift-box-outline"></i> <a href="creative.html" rel="category tag">Creative</a> <span class="meta-slash">|</span> </span> <span class="author"> <span class="left"><i class="flaticon-clock"></i></span> <span class="right">June 25, 2019</span> </span></div>
+                                                                <div class="title">
+                                                                    <h3><a class="second_font" href="the-international-food-drink-2.html">The International Food &amp; Drink</a></h3>
+                                                                </div>
+                                                                <div class="excerpt">
+                                                                    <p>Aenean tincidunt dictum volutpat. Suspendisse potenti. Duis sit amet</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-blog">
+                                                            <div class="ova-media"> <img decoding="async" src="images/06-blog_10-710x480.jpg" alt="New York Home Fashion Week"></div>
+                                                            <div class="content">
+                                                                <div class="post-meta-blog"> <span class="category"> <i class="flaticon-gift-box-outline"></i> <a href="business.html" rel="category tag">Business</a> <span class="meta-slash">|</span> </span> <span class="author"> <span class="left"><i class="flaticon-clock"></i></span> <span class="right">June 25, 2019</span> </span></div>
+                                                                <div class="title">
+                                                                    <h3><a class="second_font" href="new-york-home-fashion-week-2.html">New York Home Fashion Week</a></h3>
+                                                                </div>
+                                                                <div class="excerpt">
+                                                                    <p>Aenean tincidunt dictum volutpat. Suspendisse potenti. Duis sit amet</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-blog">
+                                                            <div class="ova-media"> <img decoding="async" src="images/06-blog_9-710x480.jpg" alt="Exhibition Excellence Awards"></div>
+                                                            <div class="content">
+                                                                <div class="post-meta-blog"> <span class="category"> <i class="flaticon-gift-box-outline"></i> <a href="travel.html" rel="category tag">Travel</a> <span class="meta-slash">|</span> </span> <span class="author"> <span class="left"><i class="flaticon-clock"></i></span> <span class="right">June 25, 2019</span> </span></div>
+                                                                <div class="title">
+                                                                    <h3><a class="second_font" href="exhibition-excellence-awards.html">Exhibition Excellence Awards</a></h3>
+                                                                </div>
+                                                                <div class="excerpt">
+                                                                    <p>Aenean tincidunt dictum volutpat. Suspendisse potenti. Duis sit amet</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-blog">
+                                                            <div class="ova-media"> <img decoding="async" src="images/06-blog_8-710x480.jpg" alt="New York Home Fashion Week"></div>
+                                                            <div class="content">
+                                                                <div class="post-meta-blog"> <span class="category"> <i class="flaticon-gift-box-outline"></i> <a href="/details.html" rel="category tag">Education</a> <span class="meta-slash">|</span> </span> <span class="author"> <span class="left"><i class="flaticon-clock"></i></span> <span class="right">June 25, 2019</span> </span></div>
+                                                                <div class="title">
+                                                                    <h3><a class="second_font" href="new-york-home-fashion-week.html">New York Home Fashion Week</a></h3>
+                                                                </div>
+                                                                <div class="excerpt">
+                                                                    <p>Aenean tincidunt dictum volutpat. Suspendisse potenti. Duis sit amet</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+</div>

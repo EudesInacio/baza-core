@@ -1,0 +1,475 @@
+﻿@using BazarCore.Models.DTO
+@{
+    Layout = "../Shared/_LayoutDetalhes.cshtml";
+    @model EventDetailsDTO;
+    ViewData["Title"] = Model.Title;
+    ViewBag.CurrentMenu = 2;
+    var culture = new System.Globalization.CultureInfo("pt-PT");
+}
+<div class="inside-content">
+    <div class="ovaheader">
+        <div data-elementor-type="wp-post" data-elementor-id="1676" class="elementor elementor-1676">
+            <div class="elementor-inner">
+                <div class="elementor-section-wrap">
+                    <section class="elementor-section elementor-top-section elementor-element elementor-element-9ca7bf4 elementor-section-content-middle ovamenu_hide ovamenu_shrink ovamenu_shrink_mobile elementor-hidden-phone elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                             data-id="9ca7bf4"
+                             data-element_type="section">
+                        <div class="elementor-container elementor-column-gap-default">
+                            <div class="elementor-row">
+                                <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-638395f elementor-hidden-phone" data-id="638395f" data-element_type="column">
+                                    <div class="elementor-column-wrap elementor-element-populated">
+                                        <div class="elementor-widget-wrap">
+                                            <div class="elementor-element elementor-element-ee54e7d elementor-widget elementor-widget-el_menu_event_detail"
+                                                 data-id="ee54e7d"
+                                                 data-element_type="widget"
+                                                 data-widget_type="el_menu_event_detail.default">
+                                                <div class="elementor-widget-container">
+                                                    <div class="el-menu-event-detail">
+                                                        <div class="icon-menu">
+                                                            <div class="el-share-social">
+                                                                <span class="share-social">
+                                                                    <a href="javascript:void(0)"><i class="fa fa-share-alt"></i></a>
+                                                                    <ul class="share-social-icons clearfix">
+                                                                        @*  <li>
+                                                                        <a class="share-ico ico-twitter" target="_blank" href="https://twitter.com/share?url=https://ovatheme.com/meup/event/real-entrepreneurship-bootcamp/">
+                                                                        Twitter
+                                                                        </a>
+                                                                        </li>*@
+                                                                        <li>
+                                                                            <a class="share-ico ico-facebook"
+                                                                               target="_blank"
+                                                                               href="https://www.facebook.com/sharer.php?u=https://ovatheme.com/meup/event/real-entrepreneurship-bootcamp/">
+                                                                                Facebook
+                                                                            </a>
+                                                                        </li>
+                                                                        @*<li>
+                                                                        <a class="share-ico ico-pinterest"
+                                                                        target="_blank"
+                                                                        href="https://www.pinterest.com/pin/create/button/?url=https://ovatheme.com/meup/event/real-entrepreneurship-bootcamp/">
+                                                                        Pinterest
+                                                                        </a>
+                                                                        </li>*@
+                                                                        <li>
+                                                                            <a class="share-ico ico-pinterest"
+                                                                               target="_blank"
+                                                                               href="https://api.whatsapp.com/send?text=https://ovatheme.com/meup/event/real-entrepreneurship-bootcamp/">
+                                                                                WhatsApp
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="share-ico ico-mail"
+                                                                               href="/cdn-cgi/l/email-protection#99a6fbf6fde0a4f1edede9eaa3b6b6f6eff8edf1fcf4fcb7faf6f4b6f4fcece9b6fceffcf7edb6ebfcf8f5b4fcf7edebfce9ebfcf7fcecebeaf1f0e9b4fbf6f6edfaf8f4e9b6">
+                                                                                Email
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </span>
+                                                            </div>
+                                                            <a href="javascript:%20void(0)" class="event-loop-favourite el-wishlist" data-id="2327"> <i class="fa fa-heart-o"></i> </a>
+                                                        </div>
+                                                        <div class="content-menu-event">
+                                                            <h3 class="title-event-menu">@Model.Title</h3>
+                                                            <p class="date-menu-event"><span class="start-time">Sext, Março 12, 2023 - Domingo Abril 23</span><span class="end-time"> 2023 (12:00 - 16:00)</span><span class="timezone"></span></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-8316635 fix-flex-start-767" data-id="8316635" data-element_type="column">
+                                    <div class="elementor-column-wrap elementor-element-populated">
+                                        <div class="elementor-widget-wrap">
+                                            <div class="elementor-element elementor-element-b86d117 elementor-widget__width-auto elementor-widget elementor-widget-el_menu_event_price"
+                                                 data-id="b86d117"
+                                                 data-element_type="widget"
+                                                 data-widget_type="el_menu_event_price.default">
+                                                <div class="elementor-widget-container">
+                                                    <div class="el-menu-event-price"><span class="event_loop_price">AOA 5.000</span></div>
+                                                </div>
+                                            </div>
+                                            <div class="elementor-element elementor-element-eee095c elementor-align-right elementor-widget__width-auto booking_event_button elementor-widget elementor-widget-button"
+                                                 data-id="eee095c"
+                                                 data-element_type="widget"
+                                                 data-widget_type="button.default">
+                                                <div class="elementor-widget-container">
+                                                    <div class="elementor-button-wrapper">
+                                                        <a href="#" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+                                                            <span class="elementor-button-content-wrapper">
+                                                                <span class="elementor-button-icon elementor-align-icon-left"> <i aria-hidden="true" class="fas fa-cart-plus"></i> </span>
+                                                                <span class="elementor-button-text">Booking Now</span>
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="elementor-section elementor-top-section elementor-element elementor-element-70ebb7b elementor-section-content-middle ovamenu_hide ovamenu_shrink ovamenu_shrink_mobile footer elementor-hidden-desktop elementor-hidden-tablet elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                             data-id="70ebb7b"
+                             data-element_type="section">
+                        <div class="elementor-container elementor-column-gap-default">
+                            <div class="elementor-row">
+                                <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-bf312d6 fix-flex-start-767" data-id="bf312d6" data-element_type="column">
+                                    <div class="elementor-column-wrap elementor-element-populated">
+                                        <div class="elementor-widget-wrap">
+                                            <div class="elementor-element elementor-element-ffef2df elementor-widget__width-auto elementor-widget elementor-widget-el_menu_event_price"
+                                                 data-id="ffef2df"
+                                                 data-element_type="widget"
+                                                 data-widget_type="el_menu_event_price.default">
+                                                <div class="elementor-widget-container">
+                                                    <div class="el-menu-event-price"><span class="event_loop_price">@Model.PriceMin - @Model.PriceMax</span></div>
+                                                </div>
+                                            </div>
+                                            <div class="elementor-element elementor-element-f0d64d6 elementor-align-right elementor-widget__width-auto booking_event_button elementor-widget elementor-widget-button"
+                                                 data-id="f0d64d6"
+                                                 data-element_type="widget"
+                                                 data-widget_type="button.default">
+                                                <div class="elementor-widget-container">
+                                                    <div class="elementor-button-wrapper">
+                                                        <a href="#" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+                                                            <span class="elementor-button-content-wrapper">
+                                                                <span class="elementor-button-icon elementor-align-icon-left"> <i aria-hidden="true" class="fas fa-cart-plus"></i> </span>
+                                                                <span class="elementor-button-text">Booking Now</span>
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="elementor-section elementor-top-section elementor-element elementor-element-d4df761 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+                             data-id="d4df761"
+                             data-element_type="section"
+                             data-settings='{"background_background":"classic"}'>
+                        <div class="elementor-container elementor-column-gap-no">
+                            <div class="elementor-row">
+                                <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-8857cee" data-id="8857cee" data-element_type="column">
+                                    <div class="elementor-column-wrap elementor-element-populated">
+                                        <div class="elementor-widget-wrap">
+                                            <div class="elementor-element elementor-element-109ff69 elementor-widget elementor-widget-ova_logo" data-id="109ff69" data-element_type="widget" data-widget_type="ova_logo.default">
+                                                <div class="elementor-widget-container">
+                                                    <a class="ova_logo" href="/">
+                                                        <img decoding="async" src="/images/bazaimage.png" alt="Bazar image" class="desk-logo d-none d-xl-block" />
+                                                        <img decoding="async" src="/images/bazaimage.png" alt="Bazar image" class="mobile-logo d-block d-xl-none" />
+                                                        <img decoding="async" src="/images/bazaimage.png" alt="Bazar image" class="logo-fixed" />
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-a80f366" data-id="a80f366" data-element_type="column">
+                                    <div class="elementor-column-wrap elementor-element-populated">
+                                        <div class="elementor-widget-wrap">
+                                            <div class="elementor-element elementor-element-d40c3ed elementor-view-primary-menu elementor-widget__width-auto elementor-widget elementor-widget-ova_menu"
+                                                 data-id="d40c3ed"
+                                                 data-element_type="widget"
+                                                 data-widget_type="ova_menu.default">
+                                                <div class="elementor-widget-container">
+                                                    <div class="ova_menu_clasic">
+                                                        <div class="ova_wrap_nav row NavBtn_right NavBtn_right_m">
+                                                            <button class="ova_openNav" type="button"><i class="fas fa-bars"></i></button>
+                                                            <div class="ova_nav canvas_left canvas_bg_gray">
+                                                                <a href="javascript:void(0)" class="ova_closeNav"><i class="fas fa-times"></i></a>
+                                                                <ul id="menu-primary-menu" class="menu sub_menu_dir_right">
+                                                                    <li id="menu-item-91" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-85 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-91 dropdown">
+                                                                        <a title="Home" href="/">Início</a><button type="button" class="dropdown-toggle"></button>
+                                                                    </li>
+                                                                    <li id="menu-item-251" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-251 dropdown active">
+                                                                        <a title="Eventos" href="/eventos">Eventos</a><button type="button" class="dropdown-toggle"><i class=""></i></button>
+                                                                    </li>
+                                                                    <li id="menu-item-251" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-251 dropdown">
+                                                                        <a title="Page" href="#">Agenda Unitel</a><button type="button" class="dropdown-toggle"><i class=""></i></button>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="ova_closeCanvas ova_closeNav"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="elementor-element elementor-element-4f30326 elementor-widget__width-auto elementor-widget elementor-widget-ova_menu_account"
+                                                 data-id="4f30326"
+                                                 data-element_type="widget"
+                                                 data-widget_type="ova_menu_account.default">
+                                                <div class="elementor-widget-container">
+                                                    <div class="ova-menu-acount">
+                                                        <span class="login">
+                                                            <a href="/entrar"> <i class="fa fa-user"></i> Entrar </a>
+                                                        </span>
+                                                        <span class="slash">|</span> <span class="register"> <a href="/registrar"> Registrar </a> </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="elementor-element elementor-element-20bd829 button-create-event elementor-widget__width-auto elementor-hidden-tablet elementor-hidden-phone elementor-widget elementor-widget-el_button_create_event"
+                                                 data-id="20bd829"
+                                                 data-element_type="widget"
+                                                 data-widget_type="el_button_create_event.default">
+                                                <div class="elementor-widget-container">
+                                                    <div class="elementor-button-wrapper"> <a href="entrar" class="elementor-button-link elementor-button elementor-size-sm" role="button"> <i class="fa-solid fa-plus"></i> Criar Evento</span> </span> </a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <article id="event_2327 "
+             class="event_single post-2327 event type-event status-publish has-post-thumbnail hentry event_cat-conference event_tag-expo event_tag-industry event_loc-california event_loc-los-angeles elprice-high-price eljob-for-ceo taxonomy_default3-full-day">
+        <div class="event-banner">
+            <div class="single-banner" style="background-image: url(@Model.Banner)"></div>
+        </div>
+        <div class="wrap_event_top">
+            <div class="event_top">
+                <div class="event_info">
+                    <div class="date-top">
+                        <div class="date-start">
+                            <div class="wp-date">
+                                <div class="month">@Model.OriginalDateStart?.ToString("mmm")</div>
+                                <div class="day-week"><span class="day">@Model.OriginalDateStart?.ToString("dd")</span> <span class="weekday">@Model.OriginalDateStart?.ToString("ddd",culture)</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-top">
+                        <h1 class="title-event-single second_font no-empty-ticket">@Model.Title</h1>
+                        <div class="event_date">
+                            <i class="fa-regular fa-clock"></i>
+                            <div class="wp-time-top"><span class="start-time">@Model.DateStart - &nbsp;</span><span class="end-time">@Model.DateEnd</span><span class="timezone"></span></div>
+                        </div>
+                        <div class="event-address">
+                            <i class="fa-sharp fa-regular fa-location-dot"></i>
+                            <div class="wp-address">
+                                <span class="el-address-general el-venue"> @Model.City <br /> </span> <span class="el-address-general el-address has_venue"> @Model.Adress </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="act_gr">
+                    <div class="act_booking"> <a href="#tickets_to_buy" id="event_booking_single_button" data-url="">Comprar ingresso</a></div>
+                    <div class="act_share">
+                        <div class="el_share_social">
+                            <a href="javascript:%20void().html"> <i class="fa-solid fa-arrow-up-from-bracket"></i> Partilhar </a>
+                            <ul class="share-social-icons clearfix">
+                                @*<li><a class="share-ico ico-twitter" target="_blank" href="https://twitter.com/share?url=https://ovatheme.com/meup/event/real-entrepreneurship-bootcamp/">Twitter</a></li>*@
+                                <li><a class="share-ico ico-facebook" target="_blank" href="https://www.facebook.com/sharer.php?u=https://ovatheme.com/meup/event/real-entrepreneurship-bootcamp/">Facebook</a></li>
+                                @*<li><a class="share-ico ico-pinterest" target="_blank" href="https://www.pinterest.com/pin/create/button/?url=https://ovatheme.com/meup/event/real-entrepreneurship-bootcamp/">Pinterest</a></li>*@
+                                <li><a class="share-ico ico-pinterest" target="_blank" href="https://api.whatsapp.com/send?text=https://ovatheme.com/meup/event/real-entrepreneurship-bootcamp/">WhatsApp</a></li>
+                                <li>
+                                    <a class="share-ico ico-mail"
+                                       href="/cdn-cgi/l/email-protection#cbf4a9a4afb2f6a3bfbfbbb8f1e4e4a4bdaabfa3aea6aee5a8a4a6e4a6aebebbe4aebdaea5bfe4b9aeaaa7e6aea5bfb9aebbb9aea5aebeb9b8a3a2bbe6a9a4a4bfa8aaa6bbe4">
+                                        Email
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="el_report">
+                            <a href="javascript:void(0)" class="el_report_link" data-myaccount_page="https://ovatheme.com/meup/member-account/" data-id_event="2327"><i class="fa-regular fa-megaphone"></i>Reportar </a>
+                            <div class="el_wrap_form_report"></div>
+                        </div>
+                        <div class="el_calendar_export">
+                            <a href="javascript:%20void().html"> <i class="fa-regular fa-calendar"></i> Calendário </a>
+                            <div class="el_con_calendar_export">
+                                <div class="add_cal">
+                                    <a href="https://addtocalendar.com/atc/google?utz=420&amp;uln=en-US&amp;vjs=1.5&amp;e%5B0%5D%5Bdate_start%5D=09/29/22%2008:00&amp;e%5B0%5D%5Bdate_end%5D=09/29/22%2018:30&amp;e%5B0%5D%5Btimezone%5D=&amp;e%5B0%5D%5Btitle%5D=Real%20Entrepreneurship%20Bootcamp%20in%202020&amp;e%5B0%5D%5Bdescription%5D=Lorem%20ipsum%20dolor%20sit%20amet,%20consectetur%20adipiscing%20elit.%20Maecenas%20in%20pulvinar%20neque.%20Nulla%20finib%20us%20lobortis%20pulvinar.%20Donec%20a%20consectetur%20nulla.%20Nulla%20posuere%20sapien%20vitae%20lectus%20suscipit,%20et%20pu%20lvinar%20nisi%20tincidunt.%20Aliquam%20erat%20volutpat.%20Curabitur%20convallis%20fringilla%20diam%20sed%20aliquam.%20Sed%20te%20mpor%20iaculis%20massa%20faucibus%20feugiat.%20In%20fermentum%20facilisis%20massa,%20a%20consequat.%20Lorem%20%5B%E2%80%A6%5D&amp;e%5B0%5D%5Blocation%5D=Vermont%20Harbor,%20Los%20Angeles,%20California&amp;e%5B0%5D%5Borganizer%5D=admin&amp;e%5B0%5D%5Bemail%5D=mercadodacomida@gmail.com"
+                                       target="_blank"
+                                       rel="nofollow">
+                                        <i class="icon_calendar"></i> Add Calendario
+                                    </a>
+                                </div>
+                                <div class="export_ical">
+                                    <a href="https://addtocalendar.com/atc/ical?utz=420&amp;uln=en-US&amp;vjs=1.5&amp;e%5B0%5D%5Bdate_start%5D=09/29/22%2008:00&amp;e%5B0%5D%5Bdate_end%5D=09/29/22%2018:30&amp;e%5B0%5D%5Btimezone%5D=&amp;e%5B0%5D%5Btitle%5D=Real%20Entrepreneurship%20Bootcamp%20in%202020&amp;e%5B0%5D%5Bdescription%5D=Lorem%20ipsum%20dolor%20sit%20amet,%20consectetur%20adipiscing%20elit.%20Maecenas%20in%20pulvinar%20neque.%20Nulla%20finib%20us%20lobortis%20pulvinar.%20Donec%20a%20consectetur%20nulla.%20Nulla%20posuere%20sapien%20vitae%20lectus%20suscipit,%20et%20pu%20lvinar%20nisi%20tincidunt.%20Aliquam%20erat%20volutpat.%20Curabitur%20convallis%20fringilla%20diam%20sed%20aliquam.%20Sed%20te%20mpor%20iaculis%20massa%20faucibus%20feugiat.%20In%20fermentum%20facilisis%20massa,%20a%20consequat.%20Lorem%20%5B%E2%80%A6%5D&amp;e%5B0%5D%5Blocation%5D=Vermont%20Harbor,%20Los%20Angeles,%20California&amp;e%5B0%5D%5Borganizer%5D=admin&amp;e%5B0%5D%5Bemail%5D=mercadodacomida@gmail.com"
+                                       target="_blank"
+                                       rel="nofollow">
+                                        <i class="icon_download"></i> Exportar
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrap_main_content" id="tickets_to_buy">
+            <div class="main_content">
+                <div class="event-content">
+                    <div id="" class="event_desc event_section_white">
+                        <h3 class="heading desc-event second_font">Descrição</h3>
+                        <div class="wrap_content" data-height="300">
+                            <p>
+                                @Model.Description
+                            </p>
+                        </div>
+                    </div>
+                    <div class="ticket-info event_section_white" id="">
+                        <h3 class="heading second_font">Ingressos disponíveis</h3>
+                        @foreach (var item in @Model.Tickets)
+                        {
+                            <div class="item-info-ticket">
+                                <div class="heading-ticket empty-desc" data-desc="true">
+                                    <div class="coupon_tool_tip"><p class="title-ticket">@item.Name  (<span class="ticketQtd" id="normalTicket"> 0</span>)</p></div>
+                                    <div class="wp-price-status">
+                                        <p class="price">@item.Price</p>
+                                        <span onclick="addTicket('normalTicket')" class="stattus"> <i class="fa-solid fa-plus"></i> </span>
+                                        <span onclick="removeTicket('normalTicket')" class="stattus"> <i class="fa-solid fa-minus"></i> </span>
+                                    </div>
+                                </div>
+                                <div class="desc-ticket">
+                                    <div class="desc"><p></p></div>
+                                </div>
+                            </div>
+                        }
+                        <div class="checkout-button">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#checkoutModal">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="ticket-calendar event_section_white" id="booking_event">
+                        <h3 class="title-ticket-calendar-single-event second_font heading">
+                            Calendário do evento
+                            <span class="sub-title ">Datas e horas do evento</span>
+                        </h3>
+                    </div>
+
+                </div>
+                <div class="event-sidebar">
+                    <div class="event-sidebar-content">
+                        <div class="info_user event_section_white">
+                            <div class="top">
+                                <div class="user_image"><img decoding="async" src="@Model.OrganizerLogo" alt="@Model.Organizer" /></div>
+                                <div class="author_name second_font">
+                                    <a class="name" href="%20.html"> @Model.Organizer</a>
+                                    @*<div class="user_job second_font">+ Eventos</div>*@
+                                </div>
+                            </div>
+                            <div class="contact">
+                                <div class="phone"><i class="fa-solid fa-phone"></i> <a href="tel:944475132">+244 944475132</a></div>
+                                <div class="mail">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <a href="/cdn-cgi/l/email-protection#5a352c3b2e323f373f1a3d373b333674393537"><span class="__cf_email__" data-cfemail="0b647d6a7f636e666e4b6c666a626725686466">[email protected]</span></a>
+                                </div>
+                            </div>
+                            <div class="social">
+                                <div class="social_item">
+                                    <a href="#" target="_blank"> <i class="fa-brands fa-facebook"></i> Facebook </a>
+                                </div>
+                                <div class="social_item">
+                                    <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram </a>
+                                </div>
+                            </div>
+                            <form class="el-sendmail-author">
+                                <input class="input-field" type="text" name="name_customer" value="" placeholder="Name" required />
+                                <input class="input-field" type="text" name="email_customer" placeholder="Email" value="" required />
+                                <input class="input-field" type="text" name="phone_customer" value="" placeholder="Phone" required />
+                                <input class="input-field" type="text" name="subject_customer" placeholder="Subject" required /><textarea class="input-field" name="content" cols="30" rows="10" placeholder="Content"></textarea>
+                                <button type="submit" data-id="2327" class="submit-sendmail">
+                                    Send Mail
+                                    <div class="submit-load-more">
+                                        <div class="load-more">
+                                            <div class="lds-spinner">
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+                            </form>
+                            <div class="el-notify">
+                                <p class="success">Send mail success</p>
+                                <p class="error">Send mail failed</p>
+                                <p class="error-require">Please enter input field</p>
+                            </div>
+                        </div>
+                        <div class="event_map_section event_section_white">
+                            <h3 class="second_font heading map">
+                                Ver no mapa <a class="btn text-center" href="https://maps.google.com?saddr=Current+Location&amp;daddr=33.9991408,-118.2935891" target="_blank"> <i class="fa-solid fa-diamond-turn-right"></i>Ver direção </a>
+                            </h3>
+                            <div id="event_map" class="event_map" data-lat="33.9991408" data-lng="-118.2935891" data-address="Vermont Harbor, Los Angeles, California" data-zoom="17"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script data-cfasync="false" src="/js/cloudflare-static-email-decode.min.js"></script>
+
+        </div>
+    </article>
+</div>
+<div class="modal fade checkout-modal" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content checkout-modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="checkoutModalLabel">Finalizar Compra</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body checkout-modal-body">
+                <div class="ticket">
+                    <div class="ticket-content">
+                        <div>
+                            <h3>Mercado da comida</h3>
+                            <div class="infos">
+                                <i class="fa-solid fa-clock"></i>
+                                <p>Sext, Março 12, 2023 - Domingo</p>
+                            </div>
+                            <div class="infos">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p>Cidadela, Luanda - Angola</p>
+                            </div>
+                            <div class="infos">
+                                <i class="fa-solid fa-ticket"></i>
+                                <p>1 ingresso Normal</p>
+                            </div>
+                        </div>
+
+                        <div class="footer">
+                            <p>Total</p>
+                            <p>5.000kz</p>
+                        </div>
+                    </div>
+                    <div class="bottom-line"></div>
+                </div>
+
+                <div class="code">
+                    <input type="text" placeholder="Insira o código de desconto">
+                    <p>Validar</p>
+                </div>
+
+                <div class="payment-methods">
+                    <div class="method">
+                        <img src="/images/multicaixa.png" alt="">
+                    </div>
+                    <div class="method">
+                        <img src="/images/bai.png" alt="">
+                    </div>
+                    <div class="method">
+                        <img src="/images/visa.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Concluir</button>
+            </div>
+        </div>
+    </div>
+</div>

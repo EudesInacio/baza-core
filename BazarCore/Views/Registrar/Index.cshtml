@@ -1,0 +1,570 @@
+﻿@{
+    ViewData["Title"] = "Registrar";
+    var result = ViewBag.Result as dynamic;
+}
+
+<div class="inside-content">
+    <div class="ovaheader">
+        <style id="elementor-post-202">
+            .elementor-202 .elementor-element.elementor-element-efe09f9:not(.elementor-motion-effects-element-type-background),
+            .elementor-202 .elementor-element.elementor-element-efe09f9 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+                background-color: #ffffff;
+            }
+
+            .elementor-202 .elementor-element.elementor-element-efe09f9 {
+                box-shadow: 0px 0px 7px 1px rgba(71, 71, 71, 0.4);
+                transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+                padding: 0px 15px 0px 15px;
+            }
+
+                .elementor-202 .elementor-element.elementor-element-efe09f9 > .elementor-background-overlay {
+                    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+                }
+
+            .elementor-bc-flex-widget .elementor-202 .elementor-element.elementor-element-78535e2.elementor-column .elementor-column-wrap {
+                align-items: center;
+            }
+
+            .elementor-202 .elementor-element.elementor-element-78535e2.elementor-column.elementor-element[data-element_type="column"] > .elementor-column-wrap.elementor-element-populated > .elementor-widget-wrap {
+                align-content: center;
+                align-items: center;
+            }
+
+            .elementor-202 .elementor-element.elementor-element-78535e2 > .elementor-element-populated > .elementor-widget-wrap {
+                padding: 0px 0px 0px 10px;
+            }
+
+            .elementor-202 .elementor-element.elementor-element-719abbc .ova_logo img.desk-logo {
+                width: 109px;
+                height: 40px;
+            }
+
+            .elementor-202 .elementor-element.elementor-element-719abbc .ova_logo img.mobile-logo {
+                width: 109px;
+                height: 40px;
+            }
+
+            .elementor-202 .elementor-element.elementor-element-719abbc .ova_logo img.logo-fixed {
+                width: 109px;
+                height: 40px;
+            }
+
+            .elementor-bc-flex-widget .elementor-202 .elementor-element.elementor-element-ab905b4.elementor-column .elementor-column-wrap {
+                align-items: center;
+            }
+
+            .elementor-202 .elementor-element.elementor-element-ab905b4.elementor-column.elementor-element[data-element_type="column"] > .elementor-column-wrap.elementor-element-populated > .elementor-widget-wrap {
+                align-content: center;
+                align-items: center;
+            }
+
+            .elementor-202 .elementor-element.elementor-element-ab905b4.elementor-column > .elementor-column-wrap > .elementor-widget-wrap {
+                justify-content: flex-end;
+            }
+
+            .elementor-202 .elementor-element.elementor-element-ab905b4 > .elementor-element-populated > .elementor-widget-wrap {
+                padding: 0px 10px 0px 0px;
+            }
+
+            .elementor-202 .elementor-element.elementor-element-a079a4f .ova_nav ul.menu {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+
+                .elementor-202 .elementor-element.elementor-element-a079a4f .ova_nav ul.menu > li > a {
+                    padding: 25px 0px 25px 0px;
+                    color: #22213f;
+                    font-size: 14px;
+                    text-transform: capitalize;
+                }
+
+                    .elementor-202 .elementor-element.elementor-element-a079a4f .ova_nav ul.menu > li > a:hover {
+                        color: #0031e2;
+                    }
+
+                .elementor-202 .elementor-element.elementor-element-a079a4f .ova_nav ul.menu > li.active > a {
+                    color: #0031e2;
+                }
+
+            .elementor-202 .elementor-element.elementor-element-a079a4f .ova_nav .dropdown-menu {
+                min-width: 11rem;
+            }
+
+            .elementor-202 .elementor-element.elementor-element-a079a4f .ova_nav ul.menu .dropdown-menu li a {
+                padding: 10px 15px 10px 15px;
+                font-size: 14px;
+                text-transform: capitalize;
+            }
+
+            .elementor-202 .elementor-element.elementor-element-a079a4f .ova_nav ul.menu .dropdown-menu li > a:hover {
+                color: #0031e2;
+            }
+
+            .elementor-202 .elementor-element.elementor-element-a079a4f .ova_nav ul.menu .dropdown-menu li.active > a {
+                color: #0031e2;
+            }
+
+            .elementor-202 .elementor-element.elementor-element-a079a4f .ova_nav ul.menu .dropdown-menu {
+                border-radius: 0px 0px 0px 0px;
+            }
+
+                .elementor-202 .elementor-element.elementor-element-a079a4f .ova_nav ul.menu .dropdown-menu li {
+                    border-style: solid;
+                    border-width: 0px 0px 1px 0px;
+                    border-color: rgba(204, 204, 204, 0.28);
+                }
+
+                    .elementor-202 .elementor-element.elementor-element-a079a4f .ova_nav ul.menu .dropdown-menu li:last-child {
+                        border-style: solid;
+                        border-width: 0px 0px 0px 0px;
+                        border-color: #ffffff;
+                    }
+
+            .elementor-202 .elementor-element.elementor-element-a079a4f .dropdown button.dropdown-toggle {
+                margin: 6px 0px 0px 0px;
+            }
+
+            .elementor-202 .elementor-element.elementor-element-a079a4f .ova_nav li a {
+                border-style: solid;
+                border-width: 0px 0px 0px 0px;
+                border-color: rgba(255, 255, 255, 0.06);
+            }
+
+            .elementor-202 .elementor-element.elementor-element-a079a4f {
+                width: auto;
+                max-width: auto;
+                align-self: center;
+            }
+
+            .elementor-202 .elementor-element.elementor-element-638886d .ova-menu-acount .login a,
+            .elementor-202 .elementor-element.elementor-element-638886d .ova-menu-acount .register a,
+            .elementor-202 .elementor-element.elementor-element-638886d .ova-menu-acount .my-account a {
+                color: #22213f;
+            }
+
+                .elementor-202 .elementor-element.elementor-element-638886d .ova-menu-acount .login a:hover,
+                .elementor-202 .elementor-element.elementor-element-638886d .ova-menu-acount .register a:hover,
+                .elementor-202 .elementor-element.elementor-element-638886d .ova-menu-acount .my-account a:hover {
+                    color: #0031e2;
+                }
+
+            .elementor-202 .elementor-element.elementor-element-638886d > .elementor-widget-container {
+                margin: 0px 0px 0px 40px;
+            }
+
+            .elementor-202 .elementor-element.elementor-element-638886d {
+                width: auto;
+                max-width: auto;
+                align-self: center;
+            }
+
+            .elementor-202 .elementor-element.elementor-element-31f6cea a.elementor-button,
+            .elementor-202 .elementor-element.elementor-element-31f6cea .elementor-button {
+                font-size: 14px;
+                font-weight: 500;
+                fill: #ffffff;
+                color: #ffffff;
+                background-color: #0031e2;
+                border-radius: 5px 5px 5px 5px;
+                padding: 10px 25px 10px 30px;
+            }
+
+                .elementor-202 .elementor-element.elementor-element-31f6cea a.elementor-button:hover,
+                .elementor-202 .elementor-element.elementor-element-31f6cea .elementor-button:hover,
+                .elementor-202 .elementor-element.elementor-element-31f6cea a.elementor-button:focus,
+                .elementor-202 .elementor-element.elementor-element-31f6cea .elementor-button:focus {
+                    color: #0031e2;
+                    background-color: #ffffff;
+                }
+
+                    .elementor-202 .elementor-element.elementor-element-31f6cea a.elementor-button:hover svg,
+                    .elementor-202 .elementor-element.elementor-element-31f6cea .elementor-button:hover svg,
+                    .elementor-202 .elementor-element.elementor-element-31f6cea a.elementor-button:focus svg,
+                    .elementor-202 .elementor-element.elementor-element-31f6cea .elementor-button:focus svg {
+                        fill: #0031e2;
+                    }
+
+            .elementor-202 .elementor-element.elementor-element-31f6cea .elementor-button {
+                border-style: solid;
+                border-width: 1px 1px 1px 1px;
+                border-color: #0031e2;
+            }
+
+            .elementor-202 .elementor-element.elementor-element-31f6cea > .elementor-widget-container {
+                margin: 0px 0px 0px 30px;
+            }
+
+            .elementor-202 .elementor-element.elementor-element-31f6cea {
+                width: auto;
+                max-width: auto;
+                align-self: center;
+            }
+
+            .elementor-202 .elementor-element.elementor-element-3dea19e {
+                margin-top: 0px;
+                margin-bottom: 65px;
+            }
+
+            .elementor-202 .elementor-element.elementor-element-1bbdec0 > .elementor-element-populated > .elementor-widget-wrap {
+                padding: 0px 0px 0px 0px;
+            }
+
+            .elementor-202 .elementor-element.elementor-element-bc8aeb3 .cover_color {
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+
+            .elementor-202 .elementor-element.elementor-element-bc8aeb3 .ova_header_el .header_title {
+                color: #ffffff;
+                padding: 90px 0px 17px 0px;
+                font-family: "Asap", Sans-serif;
+                font-size: 36px;
+                font-weight: 700;
+                line-height: 1.2em;
+            }
+
+            .elementor-202 .elementor-element.elementor-element-bc8aeb3 .ova_header_el .ovatheme_breadcrumbs ul.breadcrumb li {
+                color: #ffffff;
+                font-family: "Asap", Sans-serif;
+                font-size: 20px;
+            }
+
+                .elementor-202 .elementor-element.elementor-element-bc8aeb3 .ova_header_el .ovatheme_breadcrumbs ul.breadcrumb li a {
+                    color: #ffffff;
+                }
+
+            .elementor-202 .elementor-element.elementor-element-bc8aeb3 .ova_header_el .ovatheme_breadcrumbs ul.breadcrumb a {
+                color: #ffffff;
+            }
+
+            .elementor-202 .elementor-element.elementor-element-bc8aeb3 .ova_header_el .ovatheme_breadcrumbs ul.breadcrumb .separator {
+                color: #ffffff;
+            }
+
+            .elementor-202 .elementor-element.elementor-element-bc8aeb3 .ova_header_el .ovatheme_breadcrumbs {
+                padding: 0px 0px 96px 0px;
+            }
+
+            .elementor-202 .elementor-element.elementor-element-bc8aeb3 {
+                text-align: center;
+            }
+
+                .elementor-202 .elementor-element.elementor-element-bc8aeb3 > .elementor-widget-container {
+                    background-image: url("https://ovatheme.com/meup/wp-content/uploads/2019/06/bg_top_heading.jpg");
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+
+            @@media (min-width: 768px) {
+                .elementor-202 .elementor-element.elementor-element-78535e2 {
+                    width: 20.86%;
+                }
+
+                .elementor-202 .elementor-element.elementor-element-ab905b4 {
+                    width: 79.14%;
+                }
+            }
+
+            @@media (max-width: 1024px) and (min-width: 768px) {
+                .elementor-202 .elementor-element.elementor-element-78535e2 {
+                    width: 30%;
+                }
+
+                .elementor-202 .elementor-element.elementor-element-ab905b4 {
+                    width: 70%;
+                }
+            }
+
+            @@media (max-width: 1024px) {
+                .elementor-202 .elementor-element.elementor-element-efe09f9 {
+                    padding: 15px 10px 15px 10px;
+                }
+
+                .elementor-202 .elementor-element.elementor-element-78535e2 > .elementor-element-populated > .elementor-widget-wrap {
+                    padding: 0px 0px 0px 10px;
+                }
+
+                .elementor-202 .elementor-element.elementor-element-ab905b4 > .elementor-element-populated > .elementor-widget-wrap {
+                    padding: 0px 10px 0px 0px;
+                }
+
+                .elementor-202 .elementor-element.elementor-element-a079a4f .ova_nav ul.menu > li > a {
+                    padding: 10px 0px 10px 0px;
+                }
+
+                .elementor-202 .elementor-element.elementor-element-a079a4f .ova_nav ul.menu .dropdown-menu {
+                    padding: 0px 0px 0px 15px;
+                }
+
+                    .elementor-202 .elementor-element.elementor-element-a079a4f .ova_nav ul.menu .dropdown-menu li a {
+                        padding: 10px 0px 10px 0px;
+                    }
+
+                .elementor-202 .elementor-element.elementor-element-a079a4f .ova_nav li a {
+                    border-width: 0px 0px 1px 0px;
+                }
+
+                .elementor-202 .elementor-element.elementor-element-a079a4f > .elementor-widget-container {
+                    margin: 0px 30px 0px 0px;
+                }
+
+                .elementor-202 .elementor-element.elementor-element-638886d > .elementor-widget-container {
+                    margin: 0px 0px 0px 0px;
+                }
+            }
+
+            @@media (max-width: 767px) {
+                .elementor-202 .elementor-element.elementor-element-78535e2 {
+                    width: 40%;
+                }
+
+                .elementor-202 .elementor-element.elementor-element-ab905b4 {
+                    width: 60%;
+                }
+
+                .elementor-202 .elementor-element.elementor-element-a079a4f > .elementor-widget-container {
+                    margin: 0px 15px 0px 0px;
+                }
+
+                .elementor-202 .elementor-element.elementor-element-638886d > .elementor-widget-container {
+                    margin: 0px 0px 0px 0px;
+                }
+
+                .elementor-202 .elementor-element.elementor-element-bc8aeb3 .ova_header_el .header_title {
+                    padding: 30px 10px 0px 10px;
+                    font-size: 30px;
+                }
+
+                .elementor-202 .elementor-element.elementor-element-bc8aeb3 .ova_header_el .ovatheme_breadcrumbs ul.breadcrumb li {
+                    font-size: 16px;
+                }
+
+                .elementor-202 .elementor-element.elementor-element-bc8aeb3 .ova_header_el .ovatheme_breadcrumbs {
+                    padding: 0px 10px 30px 10px;
+                }
+            }
+        </style>
+        <div data-elementor-type="wp-post" data-elementor-id="202" class="elementor elementor-202">
+            <div class="elementor-inner">
+                <div class="elementor-section-wrap">
+                    <section class="elementor-section elementor-top-section elementor-element elementor-element-efe09f9 elementor-section-full_width ovamenu_shrink ovamenu_shrink_mobile elementor-section-height-default elementor-section-height-default"
+                             data-id="efe09f9"
+                             data-element_type="section"
+                             data-settings='{"background_background":"classic"}'>
+                        <div class="elementor-container elementor-column-gap-no">
+                            <div class="elementor-row">
+                                <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-78535e2" data-id="78535e2" data-element_type="column">
+                                    <div class="elementor-column-wrap elementor-element-populated">
+                                        <div class="elementor-widget-wrap">
+                                            <div class="elementor-element elementor-element-719abbc elementor-widget elementor-widget-ova_logo" data-id="719abbc" data-element_type="widget" data-widget_type="ova_logo.default">
+                                                <div class="elementor-widget-container">
+                                                    <a class="ova_logo" href="/">
+                                                        <img decoding="async" src="/images/bazaimage.png" alt="Bazar image" class="desk-logo d-none d-xl-block" />
+                                                        <img decoding="async" src="/images/bazaimage.png" alt="Bazar image" class="mobile-logo d-block d-xl-none" />
+                                                        <img decoding="async" src="/images/bazaimage.png" alt="Bazar image" class="logo-fixed" />
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-ab905b4" data-id="ab905b4" data-element_type="column">
+                                    <div class="elementor-column-wrap elementor-element-populated">
+                                        <div class="elementor-widget-wrap">
+                                            <div class="elementor-element elementor-element-a079a4f elementor-view-primary-menu elementor-widget__width-auto elementor-widget elementor-widget-ova_menu"
+                                                 data-id="a079a4f"
+                                                 data-element_type="widget"
+                                                 data-widget_type="ova_menu.default">
+                                                <div class="elementor-widget-container">
+                                                    <div class="ova_menu_clasic">
+                                                        <div class="ova_wrap_nav row NavBtn_right NavBtn_right_m">
+                                                            <button class="ova_openNav" type="button"><i class="fas fa-bars"></i></button>
+                                                            <div class="ova_nav canvas_left canvas_bg_gray">
+                                                                <a href="javascript:void(0)" class="ova_closeNav"><i class="fas fa-times"></i></a>
+                                                                <ul id="menu-primary-menu" class="menu sub_menu_dir_right">
+                                                                    <li id="menu-item-91" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-85 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-91 dropdown">
+                                                                        <a title="Home" href="/">Início</a><button type="button" class="dropdown-toggle"></button>
+                                                                    </li>
+                                                                    <li id="menu-item-251" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-251 dropdown">
+                                                                        <a title="Eventos" href="/eventos">Eventos</a><button type="button" class="dropdown-toggle"><i class="arrow_carrot-down"></i></button>
+                                                                    </li>
+                                                                    <li id="menu-item-251" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-251 dropdown">
+                                                                        <a title="Page" href="#">Agenda Unitel</a><button type="button" class="dropdown-toggle"><i class="arrow_carrot-down"></i></button>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="ova_closeCanvas ova_closeNav"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="elementor-element elementor-element-638886d elementor-widget__width-auto elementor-widget elementor-widget-ova_menu_account"
+                                                 data-id="638886d"
+                                                 data-element_type="widget"
+                                                 data-widget_type="ova_menu_account.default">
+                                                <div class="elementor-widget-container">
+                                                    <div class="ova-menu-acount">
+                                                        <span class="login">
+                                                            <a href="/entrar"> <i class="fa fa-user"></i> Entrar </a>
+                                                        </span>
+                                                        <span class="slash">|</span> <span class="register"> <a href="/registrar"> Registrar </a> </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="elementor-element elementor-element-31f6cea button-create-event elementor-widget__width-auto elementor-hidden-tablet elementor-hidden-phone elementor-widget elementor-widget-el_button_create_event"
+                                                 data-id="31f6cea"
+                                                 data-element_type="widget"
+                                                 data-widget_type="el_button_create_event.default">
+                                                <div class="elementor-widget-container">
+                                                    <div class="elementor-button-wrapper"> <a href="#" class="elementor-button-link elementor-button elementor-size-sm" role="button"> <i class="fa-solid fa-plus"></i> Criar Evento</span> </span> </a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="elementor-section elementor-top-section elementor-element elementor-element-3dea19e elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+                             data-id="3dea19e"
+                             data-element_type="section">
+                        <div class="elementor-container elementor-column-gap-default">
+                            <div class="elementor-row">
+                                <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-1bbdec0" data-id="1bbdec0" data-element_type="column">
+                                    <div class="elementor-column-wrap elementor-element-populated">
+                                        <div class="elementor-widget-wrap">
+                                            <div class="elementor-element elementor-element-bc8aeb3 elementor-widget elementor-widget-ova_header"
+                                                 data-id="bc8aeb3"
+                                                 data-element_type="widget"
+                                                 data-widget_type="ova_header.default">
+                                                <div class="elementor-widget-container">
+                                                    <div class="wrap_ova_header bg_feature_img center" style="background: url();">
+                                                        <div class="cover_color"></div>
+                                                        <div class="ova_header_el">
+                                                            <h1 class="second_font header_title">Registrar</h1>
+                                                            <div class="ovatheme_breadcrumbs ovatheme_breadcrumbs_el">
+                                                                <div id="breadcrumbs">
+                                                                    <ul class="breadcrumb">
+                                                                        <li><a href="/">Início/</a></li>
+                                                                        <li>Registrar</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-elementor-type="wp-post" data-elementor-id="334" class="elementor elementor-334">
+        <div class="elementor-inner">
+            <div class="elementor-section-wrap">
+                <section class="elementor-section elementor-top-section elementor-element elementor-element-20adf605 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                         data-id="20adf605"
+                         data-element_type="section">
+                    <div class="elementor-container elementor-column-gap-default">
+                        <div class="elementor-row">
+                            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7059da6c" data-id="7059da6c" data-element_type="column">
+                                <div class="elementor-column-wrap elementor-element-populated">
+                                    <div class="elementor-widget-wrap">
+                                        <div class="elementor-element elementor-element-21261d25 elementor-widget elementor-widget-shortcode" data-id="21261d25" data-element_type="widget" data-widget_type="shortcode.default">
+                                            <div class="elementor-widget-container">
+
+                                                <div class="elementor-shortcode">
+                                                    @if (result is not null && !result.Success)
+                                                    {
+                                                        <p>Erro ao registrar utilizador</p>
+                                                    }
+                                                    <div id="register-form" class="widecolumn ova_register_user">
+                                                        <h3 class="title">Registrar</h3>
+                                                        <form id="signupform" enctype="multipart/form-data" action="/register" method="POST">
+                                                            <p class="form-row ova-email-icon"><input placeholder="Email *" type="text" name="email" id="email" class="required" data-msg="Please insert email" /></p>
+                                                            <p class="form-row ova-email-icon">
+                                                                <input placeholder="Confirmação Email *" type="text" name="confirmEmail" id="confirm-email" class="required" data-msg="Please insert confirm email" />
+                                                            </p>
+                                                            <p class="form-row ova-user-icon">
+                                                                <input autocomplete="new-password" placeholder="Username *" maxlength="128" minlength="6" type="text" name="username" id="username" class="required" data-msg="Please insert Username" />
+                                                            </p>
+                                                            <p class="form-row password">
+                                                                @*<i class="fa-solid fa-key"></i>*@
+                                                                <input autocomplete="new-password" placeholder="Palavra passe" maxlength="128" minlength="6" type="password" name="password" id="password" class="required" data-msg="Please insert password" />
+                                                            </p>
+                                                            <p class="form-row password">
+                                                                <input autocomplete="off" placeholder="Confirmação palavra passe" maxlength="128" min="6" type="password" name="confirmpassword" id="confirm-password" class="required" data-msg="Please insert password" />
+                                                            </p>
+                                                            @* <p class="form-row ova-user-icon">
+                                                            <input placeholder="Username *" type="text" name="username" id="username" class="required" data-msg="Please insert Username" />
+                                                            </p>*@
+                                                            <p class="form-row ova-user-icon">
+                                                                <input placeholder="Primeiro Nome" type="text" name="firstname" id="first-name" class="required" data-msg="Please insert First name" />
+                                                            </p>
+                                                            <p class="form-row ova-user-icon">
+                                                                <input placeholder="Último Nome" type="text" name="lastname" id="last-name" class="required" data-msg="Please insert Last name" />
+                                                            </p>
+                                                            @*<p class="form-row ova-phone-icon"><input placeholder="Telefone" type="text" name="phonenumer" id="user_phone" class="" data-msg="Please insert Phone" /></p>*@
+                                                            @*<p class="form-row ova-job-icon"><input placeholder="Job" type="text" name="user_job" id="user_job" class="" data-msg="Please insert Job" /></p>*@
+                                                            @*<p class="form-row ova-address-icon"><input placeholder="Endereço" type="text" name="user_address" id="user_address" class="" data-msg="Insirir endereço" /></p>*@
+                                                            @*  <p class="form-row">
+                                                            <textarea name="user_description" id="user_description" class="" data-msg="Please insert Description" placeholder="Desscrição"></textarea>
+                                                            </p>*@
+                                                            <p class="form-row">
+                                                                <span class="raido_input"> <input type="radio" name="isorganizer" value="false" checked id="user" /> <label for="user">Utilizador</label> </span>
+                                                                <span class="raido_input"> <input type="radio" name="isorganizer" value="true" id="vendor" /> <label for="vendor">Organiozador</label> </span>
+                                                            </p>
+                                                            <p class="form-row el-register-dcma">
+                                                                <input type="checkbox" name="agreeWithTerms" value="true" class="register_term required" data-msg="Confirme os termos e condições" />
+                                                                <span class="terms-and-conditions-checkbox-text">
+                                                                    Concordo com os termos de utilizaçao <a href="termos" class="terms-and-conditions-link" target="_blank">Termos e condição</a>
+                                                                </span>
+                                                            </p>
+                                                            <p class="signup-submit">
+                                                                <input type="submit" name="submit" class="ova-btn ova-btn-main-color" value="Registrar" />
+                                                            </p>
+                                                            <br />
+                                                            <div class="nsl-container nsl-container-block" data-align="left">
+                                                                <div class="nsl-container-buttons">
+                                                                    <a href=""
+                                                                       rel="nofollow"
+                                                                       aria-label="Continuar com &lt;b&gt;Facebook&lt;/b&gt;"
+                                                                       data-plugin="nsl"
+                                                                       data-action="connect"
+                                                                       data-provider="facebook"
+                                                                       data-popupwidth="600"
+                                                                       data-popupheight="679">
+                                                                        <div class="nsl-button nsl-button-default nsl-button-facebook" data-skin="dark" style="background-color: #1877f2;">
+                                                                            <div class="nsl-button-svg-container">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1365.3 1365.3" height="24" width="24">
+                                                                                    <path d="M1365.3 682.7A682.7 682.7 0 10576 1357V880H402.7V682.7H576V532.3c0-171.1 102-265.6 257.9-265.6 74.6 0 152.8 13.3 152.8 13.3v168h-86.1c-84.8 0-111.3 52.6-111.3 106.6v128h189.4L948.4 880h-159v477a682.8 682.8 0 00576-674.3"
+                                                                                          fill="#fff"></path>
+                                                                                </svg>
+                                                                            </div>
+                                                                            <div class="nsl-button-label-container">Continuar com <b>Facebook</b></div>
+                                                                        </div>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>

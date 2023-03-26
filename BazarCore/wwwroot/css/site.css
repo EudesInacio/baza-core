@@ -1,0 +1,22 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.blue-img {
+    filter: invert(15%) sepia(63%) saturate(5497%) hue-rotate(228deg) brightness(90%) contrast(119%) !important;
+}
