@@ -42,6 +42,9 @@ namespace BazarCore.Controllers
 
                 var principal = new System.Security.Claims.ClaimsPrincipal(identity);
 
+                await HttpContext.SignOutAsync();
+
+
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
                                     principal, new AuthenticationProperties { IsPersistent = true });
 
@@ -52,6 +55,7 @@ namespace BazarCore.Controllers
                 return RedirectToAction("index", "entrar", new { loginfailed = true });
             }
         }
+
 
     }
 }

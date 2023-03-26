@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using System.Configuration;
+using System.Security.Principal;
 
 namespace BazarCore.Application
 {
@@ -62,7 +63,7 @@ namespace BazarCore.Application
                     }
                 });
             });
-            //builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
             //builder.Services.AddIdentity();
             builder.Services.AddAuthentication(x =>
             {
@@ -70,16 +71,16 @@ namespace BazarCore.Application
 
             }).AddCookie(config =>
                {
-                   //config.Cookie.IsEssential = true;
+                   config.Cookie.IsEssential = true;
+
                    config.Cookie.Name = $"bazarAuth.Cookie";
                    config.LoginPath = "/login/index";
                    //config.AccessDeniedPath = "/_401";
                    //config.SlidingExpiration = true;
                    //config.EventsType = typeof(CustomCookieAuthenticationEvents);
                });
-            builder.Services.AddAuthorization();
+            builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
-            //builder.Services.AddHttpContextAccessor();
             builder.Services.AddDbContext<MyContext>(options =>
                    options.UseSqlServer(builder.Configuration.GetConnectionString("conn")));
             builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
