@@ -13,19 +13,19 @@ namespace BazarCore.Controllers
         {
             _userService = userService;
         }
-        public IActionResult Index(bool? mustVerifyEmail = false )
+        public IActionResult Index()
         {
-            ViewBag.MustVerifyEmail = mustVerifyEmail;
+
             return View();
         }
-        [HttpPost("register")]
+        [HttpPost("registrar")]
         public async Task<IActionResult> Post(RegisterUserDTO user)
         {
             var result = await _userService.CreateUserAsync(user);
             if (result.Success)
             {
-               
-                return RedirectToAction("index", "entrar", new { mustVerifyEmail = true});
+
+                return RedirectToAction("index", "entrar", new { mustVerifyEmail = true });
             }
             else
             {

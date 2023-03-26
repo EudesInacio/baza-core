@@ -1,10 +1,13 @@
 ﻿using BazarCore.Models;
 using BazarCore.Services.Interfaces;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace BazarCore.Application.Controllers
 {
+    [Authorize(AuthenticationSchemes = CookieAuthenticationDefaults.AuthenticationScheme)]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -17,7 +20,7 @@ namespace BazarCore.Application.Controllers
             _categoryService = categoryService;
             _eventService = eventService;
         }
-
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             var categoryResult = await _categoryService.GetAllActiveCategories();

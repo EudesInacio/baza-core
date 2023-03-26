@@ -7,6 +7,7 @@ using BazarCore.Services.Interfaces;
 using BazarCore.Services.Validators;
 using BazarCore.Utils;
 using FluentValidation;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
@@ -61,6 +62,24 @@ namespace BazarCore.Application
                     }
                 });
             });
+            //builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            //builder.Services.AddIdentity();
+            builder.Services.AddAuthentication(x =>
+            {
+                x.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+
+            }).AddCookie(config =>
+               {
+                   //config.Cookie.IsEssential = true;
+                   config.Cookie.Name = $"bazarAuth.Cookie";
+                   config.LoginPath = "/login/index";
+                   //config.AccessDeniedPath = "/_401";
+                   //config.SlidingExpiration = true;
+                   //config.EventsType = typeof(CustomCookieAuthenticationEvents);
+               });
+            builder.Services.AddAuthorization();
+
+            //builder.Services.AddHttpContextAccessor();
             builder.Services.AddDbContext<MyContext>(options =>
                    options.UseSqlServer(builder.Configuration.GetConnectionString("conn2")));
             builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
@@ -89,17 +108,13 @@ namespace BazarCore.Application
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
-
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=home}/{action=index}/{id?}");
-            app.MapControllerRoute(
-            name: "admin",
-            pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapAreaControllerRoute(
@@ -112,6 +127,7 @@ namespace BazarCore.Application
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Baza API v1");
             });
             app.UseSwagger();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

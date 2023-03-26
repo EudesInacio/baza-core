@@ -25,7 +25,15 @@ namespace BazarCore.Entities
         [Required]
         [StringLength(128, MinimumLength = 6)]
         public string Password { get; set; }
+        public Role Role { get; set; }
         public Organizer? Organizer { get; set; }
         public bool EmailConfirmed { get; set; }
+    }
+    public enum Role
+    {
+        Admin,
+        Manager,
+        Organizer,
+        User
     }
 }

@@ -9,6 +9,7 @@ namespace BazarCore.Services.Interfaces
     {
         delegate Task SendConfirmationEmail(string email, string token);
         Task<ResultService<JwtTokenDTO>> Login(UserLoginDTO userLoginDTO);
+        Task<ResultService<UserLoginResultDTO>> Login(UserWebLoginDTO loginDTO);
         Task<ResultService<User>> CreateUserAsync(RegisterUserDTO user);
 
     }

@@ -36,6 +36,26 @@ namespace BazarCore.Services
             var jwtToken = JwtHelper.GenerateJwtToken(user.Id.ToString(), user.Username);
             return resultService.Good(new JwtTokenDTO { AccessToken = jwtToken });
         }
+        public async Task<ResultService<UserLoginResultDTO>> Login(UserWebLoginDTO loginDTO)
+        {
+            var resultService = new ResultService<UserLoginResultDTO>();
+            var user = await _userRepository.FindAsync(u => u.Username == loginDTO.Username);
+            if (user == null)
+                return resultService.Fail("Invalid username or password", HttpStatusCode.Unauthorized);
+            if (!PasswordHelper.VerifyPassword(loginDTO.Password, user.Password))
+                return resultService.Fail("Invalid username or password",
+                    HttpStatusCode.Unauthorized);
+            //if (!user.EmailConfirmed)
+            //    return resultService.Fail("Email not confirmed", HttpStatusCode.Forbidden);
+            var jwtToken = JwtHelper.GenerateJwtToken(user.Id.ToString(), user.Username);
+            var result = new UserLoginResultDTO
+            {
+                Id = user.Id,
+                Role = user.Role.ToString(),
+                FullName = user.FirstName,
+            };
+            return resultService.Good(result);
+        }
         public async Task<ResultService<User>> CreateUserAsync(RegisterUserDTO userDTO)
         {
             ResultService<User> resultService = new ResultService<User>();

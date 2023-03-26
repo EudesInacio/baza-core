@@ -1,4 +1,6 @@
 ﻿@using BazarCore.Models.DTO
+@using BazarCore.Utils.Security
+@using System.Security.Claims
 @{
     Layout = "../Shared/_LayoutDetalhes.cshtml";
     @model EventDetailsDTO;
@@ -202,18 +204,30 @@
                                                  data-element_type="widget"
                                                  data-widget_type="ova_menu_account.default">
                                                 <div class="elementor-widget-container">
-                                                    <div class="ova-menu-acount">
-                                                        <span class="login">
-                                                            <a href="/entrar"> <i class="fa fa-user"></i> Entrar </a>
-                                                        </span>
-                                                        <span class="slash">|</span> <span class="register"> <a href="/registrar"> Registrar </a> </span>
-                                                    </div>
+                                                    @if (!User.Identities.Any())
+                                                    {
+                                                        <div class="ova-menu-acount">
+                                                            <span class="login">
+                                                                <a href="/entrar"> <i class="fa fa-user"></i> Entrar </a>
+                                                            </span>
+                                                            <span class="slash">|</span> <span class="register"> <a href="/registrar"> Registrar </a> </span>
+                                                        </div>
+                                                    }
+                                                    else
+                                                    {
+                                                        <div class="ova-menu-acount">
+                                                            <span class="login">
+                                                                <a href="/entrar"> <i class="fa fa-user"></i>@User.Identity.Name</a>
+                                                            </span>
+                                                            <span class="slash">|</span> <span class="register"> <a href="/registrar">  </a> </span>
+                                                        </div>
+                                                    }
                                                 </div>
                                             </div>
                                             <div class="elementor-element elementor-element-20bd829 button-create-event elementor-widget__width-auto elementor-hidden-tablet elementor-hidden-phone elementor-widget elementor-widget-el_button_create_event"
                                                  data-id="20bd829"
                                                  data-element_type="widget"
-                                                 data-widget_type="el_button_create_event.default">
+                                                 data-widget_type="el_button_create_event.default"> 
                                                 <div class="elementor-widget-container">
                                                     <div class="elementor-button-wrapper"> <a href="entrar" class="elementor-button-link elementor-button elementor-size-sm" role="button"> <i class="fa-solid fa-plus"></i> Criar Evento</span> </span> </a></div>
                                                 </div>

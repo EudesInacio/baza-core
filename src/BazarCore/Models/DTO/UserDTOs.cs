@@ -41,6 +41,14 @@ namespace BazarCore.Models.DTO
             [StringLength(128, MinimumLength = 6)]
             public string Password { get; set; }
         }
+        public class UserWebLoginDTO
+        {
+            [Required]
+            public string Username { get; set; }
+
+            [Required]
+            public string Password { get; set; }
+        }
 
         public class UserRecoverPasswordDTO
         {
@@ -58,6 +66,18 @@ namespace BazarCore.Models.DTO
             [StringLength(128, MinimumLength = 6)]
             public string NewPassword { get; set; }
         }
+        public class JwtTokenDTO
+        {
+            public string AccessToken { get; set; }
+            //public DateTime ExpiresIn { get; set; }
+        }
+        public class UserLoginResultDTO
+        {
+            public int Id { get; set; }
+            public string Role { get; set; }
+            public string FullName { get; set; }
+        }
+
 
     }
 }
