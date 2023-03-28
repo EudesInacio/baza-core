@@ -6,33 +6,55 @@
     Layout = "../Shared/_Layout.cshtml";
     
 }
-<h2>[FORMS} TO CREATE EVENT</></h2>
+
 <div class="container-fluid">
 
     <br />
-@*    <form id="" method="POST">
     <div class="row">
         <div class="col-md-12">
-            <input type="text" placeholder="Título do evento" autocomplete="on" class="form-control" />
+            <label>Título</label>
+            <input type="text" placeholder="Título do evento..." class="form-control" />
         </div>
-    </div>
-<br />
-    <div class="row">
-        <label>Data</label>
+        <div class="col-md-12">&nbsp;</div>
         <div class="col-md-12">
-            <input type="text" placeholder="Data de ocorrência do evento" autocomplete="on" class="form-control" />
+            <label>Data</label>
+            <input type="datetime" placeholder="<DATE PICKER>" class="form-control" />
         </div>
+        <div class="col-md-12">&nbsp;</div>
+        <div class="col-md-12">
+            <label>Categoria</label>
+            <select class="form-control">
+                <option value="Categoria 1">Categoria 1</option>
+                <option value="Categoria 2">Categoria 2</option>
+                <option value="Categoria 3">Categoria 3</option>
+                <option value="Categoria 4">Categoria 4</option>
+            </select>
+        </div>
+        <div class="col-md-12">&nbsp;</div>
+        <div class="col-md-12">
+            <label>Imagem</label>
+            <input type="file" placeholder="Capa do evento..." class="form-control" />
+        </div>
+        <div class="col-md-12">&nbsp;</div>
+        <div class="col-md-12">
+            <label>Banner</label>
+            <input type="file" placeholder="Banner da página do evento..." class="form-control" />
+        </div>
+        <div class="col-md-12">&nbsp;</div>
+        <div class="col-md-12">
+            <label>Organizador</label>
+            <select class="form-control">
+                <option value="Organizador 1">Organizador 1</option>
+                <option value="Organizador 2">Organizador 2</option>
+                <option value="Organizador 3">Organizador 3</option>
+                <option value="Organizador 4">Organizador 4</option>
+            </select>
+        </div>
+        <div class="col-md-12">&nbsp;</div>
+        <div class="col-md-12">            
+            <button class="btn btn-primary" style="float:right;" title="Salvar evento">Salvar</button>
+            <button class="btn btn-primary" title="Limpar campos" style="float:right; margin-right:10px;">Limpar</button>
+            </div>
+        
     </div>
-    
-    <div class="row">
-    <label>Data</label>
-    <div class="col-md-12">
-        <input type="radio" placeholder="pvd" value="Privado"/>
-                <input type="radio" value="Privado"/>
-    </div>
-
-</div>
-
-    </form>*@
-
 </div>
