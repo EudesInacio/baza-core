@@ -30,6 +30,7 @@ namespace BazarCore.Controllers
         }
         public async Task<IActionResult> Detalhes([FromRoute] int Id)
         {
+            var user = User;
             var resultService = await _eventService.GetEventDetails(Id);
 
             return View((resultService.Success) ? resultService.Data : null);
