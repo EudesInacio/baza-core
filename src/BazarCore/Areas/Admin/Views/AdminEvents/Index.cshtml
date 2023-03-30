@@ -1,5 +1,7 @@
-﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+﻿@using BazarCore.Models.DTO
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @addTagHelper *, AuthoringTagHelpers
+@model PaginatedList<EventItemDTO>
 
 @{    
     ViewData["Title"] = "AdminEvents";
@@ -60,78 +62,22 @@
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                    <tr class="odd">
-                                        <td class="sorting_1">Era uma vez na Dira</td>
-                                        <td>01-04-2023</td>                                        
-                                        <td>[Cartaz]</td>
-                                        <td>[Banner]</td>
-                                        <td>Viana Eventos LDA</td>
-                                        <td>Festas</td>
-                                        <td>Salão de Festas Suculândia</td>
-                                        <td>
-                                            <a href="#" title="Novo evento" class="btn btn-primary btn-circle"><i class="fa fa-plus"></i></a> <a href="#" title="Editar" class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></a> <a href="#" title="Remover" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr class="odd">
-                                        <td class="sorting_1">Era uma vez na Dira</td>
-                                        <td>01-04-2023</td>                                        
-                                        <td>[Cartaz]</td>
-                                        <td>[Banner]</td>
-                                        <td>Viana Eventos LDA</td>
-                                        <td>Festas</td>
-                                        <td>Salão de Festas Suculândia</td>
-                                        <td>
-                                            <a href="#" title="Novo evento" class="btn btn-primary btn-circle"><i class="fa fa-plus"></i></a> <a href="#" title="Editar" class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></a> <a href="#" title="Remover" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr class="odd">
-                                        <td class="sorting_1">Era uma vez na Dira</td>
-                                        <td>01-04-2023</td>
-                                        <td>[Cartaz]</td>
-                                        <td>[Banner]</td>
-                                        <td>Viana Eventos LDA</td>
-                                        <td>Festas</td>
-                                        <td>Salão de Festas Suculândia</td>
-                                        <td>
-                                            <a href="#" title="Novo evento" class="btn btn-primary btn-circle"><i class="fa fa-plus"></i></a> <a href="#" title="Editar" class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></a> <a href="#" title="Remover" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr class="odd">
-                                        <td class="sorting_1">Era uma vez na Dira</td>
-                                        <td>01-04-2023</td>
-                                        <td>[Cartaz]</td>
-                                        <td>[Banner]</td>
-                                        <td>Viana Eventos LDA</td>
-                                        <td>Festas</td>
-                                        <td>Salão de Festas Suculândia</td>
-                                        <td>
-                                            <a href="#" title="Novo evento" class="btn btn-primary btn-circle"><i class="fa fa-plus"></i></a> <a href="#" title="Editar" class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></a> <a href="#" title="Remover" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr class="odd">
-                                        <td class="sorting_1">Era uma vez na Dira</td>
-                                        <td>01-04-2023</td>
-                                        <td>[Cartaz]</td>
-                                        <td>[Banner]</td>
-                                        <td>Viana Eventos LDA</td>
-                                        <td>Festas</td>
-                                        <td>Salão de Festas Suculândia</td>
-                                        <td>
-                                            <a href="#" title="Novo evento" class="btn btn-primary btn-circle"><i class="fa fa-plus"></i></a> <a href="#" title="Editar" class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></a> <a href="#" title="Remover" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr class="odd">
-                                        <td class="sorting_1">Era uma vez na Dira</td>
-                                        <td>01-04-2023</td>
-                                        <td>[Cartaz]</td>
-                                        <td>[Banner]</td>
-                                        <td>Viana Eventos LDA</td>
-                                        <td>Festas</td>
-                                        <td>Salão de Festas Suculândia</td>
-                                        <td>
-                                            <a href="#" title="Novo evento" class="btn btn-primary btn-circle"><i class="fa fa-plus"></i></a> <a href="#" title="Editar" class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></a> <a href="#" title="Remover" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></a>
-                                        </td>
-                                    </tr>                                    
+                                    @foreach (var item in Model.Items)
+                                    {
+                                        <tr class="odd">
+                                            <td class="sorting_1">@item.Title</td>
+                                            <td>@item.DateStart</td>
+                                            <td>[Cartaz]</td>
+                                            <td>[Banner]</td>
+                                            <td>@item.Organizer</td>
+                                            <td>@item.FullAdress</td>
+                                            <td>@item.Category</td>
+                                            <td>
+                                                <a href="#" title="Novo evento" class="btn btn-primary btn-circle"><i class="fa fa-plus"></i></a> <a href="#" title="Editar" class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></a> <a href="#" title="Remover" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                    }
+                                
                                 </tbody>
                             </table>
                         </div>
