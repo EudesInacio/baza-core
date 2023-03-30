@@ -131,6 +131,7 @@ namespace BazarCore.Services
                     CityId = addEventDTO.CityId,
                     Adress = addEventDTO.Address,
                     IsPrivate = addEventDTO.IsPrivate,
+                    IsActive = true,
                     Description = addEventDTO.Description,
                     EventSessions = addEventDTO.EventSessions
                 };
