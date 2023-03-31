@@ -1,4 +1,5 @@
 ﻿using BazarCore.Entities;
+using BazarCore.Utils;
 
 namespace BazarCore.Models.DTO
 {
@@ -11,12 +12,15 @@ namespace BazarCore.Models.DTO
             Name = category.Name;
             Icon = category.Icon;
             CountEvents = category.Events?.Count ?? 0;
+            CreatedAt = category.CreatedAt.FormatDateToHumanReadable();
+
         }
 
         public int Id { get; set; }
         public string Name { get; set; }
         public string Icon { get; set; }
         public int? CountEvents { get; set; }
+        public string CreatedAt { get; set; }
     }
     public class SimpleCategoryDTO
     {

@@ -1,6 +1,7 @@
-﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+﻿@using BazarCore.Models.DTO;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @addTagHelper *, AuthoringTagHelpers
-
+@model List<OrganizerDTO>;
 @{
     ViewData["Title"] = "AdminOrganizers";
     Layout = "../Shared/_Layout.cshtml";
@@ -58,55 +59,18 @@
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                    <tr class="odd">
-                                        <td class="sorting_1">Viana Eventos, LDA</td>                                        
-                                        <td>[LOGO]</td>
-                                        <td>01-01-2023</td>
-                                        <td>
-                                            <a href="#" title="Novo evento" class="btn btn-primary btn-circle"><i class="fa fa-plus"></i></a> <a href="#" title="Editar" class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></a> <a href="#" title="Remover" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr class="odd">
-                                        <td class="sorting_1">Viana Eventos, LDA</td>
-                                        <td>[LOGO]</td>
-                                        <td>01-01-2023</td>
-                                        <td>
-                                            <a href="#" title="Novo evento" class="btn btn-primary btn-circle"><i class="fa fa-plus"></i></a> <a href="#" title="Editar" class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></a> <a href="#" title="Remover" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr class="odd">
-                                        <td class="sorting_1">Viana Eventos, LDA</td>
-                                        <td>[LOGO]</td>
-                                        <td>01-01-2023</td>
-                                        <td>
-                                            <a href="#" title="Novo evento" class="btn btn-primary btn-circle"><i class="fa fa-plus"></i></a> <a href="#" title="Editar" class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></a> <a href="#" title="Remover" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr class="odd">
-                                        <td class="sorting_1">Viana Eventos, LDA</td>
-                                        <td>[LOGO]</td>
-                                        <td>01-01-2023</td>
-                                        <td>
-                                            <a href="#" title="Novo evento" class="btn btn-primary btn-circle"><i class="fa fa-plus"></i></a> <a href="#" title="Editar" class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></a> <a href="#" title="Remover" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr class="odd">
-                                        <td class="sorting_1">Viana Eventos, LDA</td>                                        
-                                        <td>[LOGO]</td>
-                                        <td>01-01-2023</td>
-                                        <td>
-                                            <a href="#" title="Novo evento" class="btn btn-primary btn-circle"><i class="fa fa-plus"></i></a> <a href="#" title="Editar" class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></a> <a href="#" title="Remover" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr class="odd">
-                                        <td class="sorting_1">Viana Eventos, LDA</td>
-                                        <td>[LOGO]</td>
-                                        <td>01-01-2023</td>
-                                        <td>
-                                            <a href="#" title="Novo evento" class="btn btn-primary btn-circle"><i class="fa fa-plus"></i></a> <a href="#" title="Editar" class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></a> <a href="#" title="Remover" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                </tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr class="odd">
+                                            <td class="sorting_1">@item.Name</td>
+                                            <td>[LOGO]</td>
+                                            <td>@item.CreatedAt</td>
+                                            <td>
+                                                <a href="#" title="Novo evento" class="btn btn-primary btn-circle"><i class="fa fa-plus"></i></a> <a href="#" title="Editar" class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></a> <a href="#" title="Remover" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                    }
+                                    </tbody>
                             </table>
                         </div>
                     </div><div class="row">

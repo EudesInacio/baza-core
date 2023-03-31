@@ -1,5 +1,6 @@
 ﻿
 using BazarCore.Entities;
+using BazarCore.Utils;
 
 namespace BazarCore.Models.DTO
 {
@@ -9,12 +10,12 @@ namespace BazarCore.Models.DTO
         {
             Name = organizer.ComercialName;
             Logo = organizer.Logo;
-            CreatedAt = organizer.CreatedAt;
+            CreatedAt = organizer.CreatedAt.FormatDateToHumanReadable();
 
         }
         public string Name { get; set; }
         public string Logo { get; set; }
-        public DateTime CreatedAt { get; set; }
+        public string CreatedAt { get; set; }
     }
 }
 

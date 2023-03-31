@@ -5,7 +5,8 @@
 @{
     ViewData["Title"] = "AdminEvents";
     Layout = "../Shared/_Layout.cshtml";
-    
+    var categories = ViewBag.Categories as List<CategoryDTO>;
+
 }
 
 <div class="container-fluid">
@@ -45,9 +46,10 @@
                 <label asp-for="CategoryId" class="form-label">Categoria</label>
                 <select asp-for="CategoryId" class="form-control">
                     <option value="">Selecione uma categoria</option>
-                    
-                        <option value="1">Negocio</option>
-                    
+                    @foreach (var item in categories)
+                    {
+                        <option value="@item.Id">@item.Name</option>
+                    }
                 </select>
                 <span asp-validation-for="CategoryId" class="text-danger">Por favor, selecione uma categoria.</span>
             </div>

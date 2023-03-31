@@ -5,6 +5,8 @@
     ViewData["Title"] = "AdminOrganizers";
     Layout = "../Shared/_Layout.cshtml";
     ViewBag.CurrentMenu = 3;
+    @using BazarCore.Models.DTO;
+    @model List<CategoryDTO>;
 }
 
 <div class="container-fluid">
@@ -44,7 +46,7 @@
                                 <thead>
                                     <tr role="row">
                                         <th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 56.3333px;">Nome</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.3333px;">Criada em</th>                                        
+                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 61.3333px;">Criada em</th>
                                         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" aria-label="Salary: activate to sort column ascending" style="width: 66.3333px;">&nbsp;</th>
                                     </tr>
                                 </thead>
@@ -56,39 +58,17 @@
                                     </tr>
                                 </tfoot>
                                 <tbody>
+                                    @foreach (var item in Model)
+                                    {
                                     <tr class="odd">
-                                        <td class="sorting_1">Festas</td>
-                                        <td>01-04-2023</td>                                                                                
+                                        <td class="sorting_1">@item.Name</td>
+                                        <td>@item.CreatedAt</td>
                                         <td>
                                             <a href="#" title="Novo evento" class="btn btn-primary btn-circle"><i class="fa fa-plus"></i></a> <a href="#" title="Editar evento" class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></a> <a href="#" title="Remover evento" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
-                                    
-                                    <tr class="odd">
-                                        <td class="sorting_1">Shows</td>
-                                        <td>01-04-2023</td>                                        
-                                        <td>
-                                            <a href="#" title="Novo evento" class="btn btn-primary btn-circle"><i class="fa fa-plus"></i></a> <a href="#" title="Editar evento" class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></a> <a href="#" title="Remover evento" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-
-                                    <tr class="odd">
-                                        <td class="sorting_1">Festas</td>
-                                        <td>01-04-2023</td>
-                                        <td>
-                                            <a href="#" title="Novo evento" class="btn btn-primary btn-circle"><i class="fa fa-plus"></i></a> <a href="#" title="Editar evento" class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></a> <a href="#" title="Remover evento" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-
-                                    <tr class="odd">
-                                        <td class="sorting_1">Shows</td>
-                                        <td>01-04-2023</td>
-                                        <td>
-                                            <a href="#" title="Novo evento" class="btn btn-primary btn-circle"><i class="fa fa-plus"></i></a> <a href="#" title="Editar evento" class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></a> <a href="#" title="Remover evento" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-
-                                </tbody>
+                                    }
+                                    </tbody>
                             </table>
                         </div>
                     </div><div class="row">
