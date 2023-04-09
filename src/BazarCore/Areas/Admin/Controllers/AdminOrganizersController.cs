@@ -1,15 +1,25 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BazarCore.Services;
+using BazarCore.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BazarCore.Areas.Admin.Controllers
 {
     [Area("Admin")]
     public class AdminOrganizersController : Controller
     {
-        public IActionResult Index()
+        private readonly IOrganizerService _organizerService;
+
+        public AdminOrganizersController(IOrganizerService organizerService)
         {
-            return View();
+            _organizerService = organizerService;
         }
 
+        public async Task<IActionResult >Index()
+        {
+            var result = await _organizerService.GetAllOrganizers(1, 60);
+
+            return View(result.Data);
+        }
         public IActionResult Create()
         {
             return View();

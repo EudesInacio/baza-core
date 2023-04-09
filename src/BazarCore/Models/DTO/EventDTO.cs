@@ -1,8 +1,38 @@
 ﻿using BazarCore.Entities;
 using BazarCore.Utils;
+using System.ComponentModel.DataAnnotations;
 
 namespace BazarCore.Models.DTO
 {
+    public class AddEventDTO
+    {
+        [Required]
+        [StringLength(64, MinimumLength = 3)]
+        public string Title { get; set; }
+
+        [Required]
+        public IFormFile Image { get; set; }
+
+        public IFormFile Banner { get; set; }
+
+        public string Description { get; set; }
+
+        [Required]
+        public int OrganizerId { get; set; }
+
+        [Required]
+        public int CategoryId { get; set; }
+
+        [Required]
+        public int CityId { get; set; }
+
+        public string Address { get; set; }
+
+        public bool IsPrivate { get; set; }
+
+        public List<EventSession> EventSessions { get; set; }
+    }
+
     public class EventDTO
     {
         public EventDTO(Event @event)

@@ -92,7 +92,7 @@ namespace BazarCore.Application
             builder.Services.AddScoped<IEventService, EventService>();
             builder.Services.AddScoped<IOrganizerService, OrganizerService>();
             builder.Services.AddScoped<ICategoryService, CategoryService>();
-
+            //builder.Services.AddTransient<IBufferedFileUploadService, BufferedFileUploadLocalService>();
 
             builder.Services.AddControllers();
 

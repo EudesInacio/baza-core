@@ -19,7 +19,7 @@ namespace BazarCore.Controllers
         public async Task<IActionResult> Index([FromQuery] SearchEvents? search = null)
         {
             var categoryResult = await _categoryService.GetAllActiveCategories();
-            var eventsResult = await _eventService.GetAllActiveEvents(search, 1, 50);
+            var eventsResult = await _eventService.GetAllEvents(search, true, 1, 50);
 
 
             ViewBag.Categories = (categoryResult.Success) ? categoryResult.Data : new();

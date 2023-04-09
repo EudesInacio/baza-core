@@ -1,34 +1,81 @@
-﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+﻿@using BazarCore.Models.DTO
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @addTagHelper *, AuthoringTagHelpers
-
+@model AddEventDTO
 @{
     ViewData["Title"] = "AdminEvents";
     Layout = "../Shared/_Layout.cshtml";
-    
+    var categories = ViewBag.Categories as List<CategoryDTO>;
+
 }
 
 <div class="container-fluid">
 
     <br />
     <div class="row">
+        <form method="post" action="create/" formaction="create" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label asp-for="Title" class="form-label">Título</label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger">Por favor, insira um título válido (entre 3 e 64 caracteres).</span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Image" class="form-label">Imagem</label>
+                <input asp-for="Image" type="file" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger">Por favor, selecione uma imagem.</span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Banner" class="form-label">Banner</label>
+                <input asp-for="Banner" type="file" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="Description" class="form-label">Descrição</label>
+                <textarea asp-for="Description" class="form-control"></textarea>
+            </div>
+            <div class="mb-3">
+                <label asp-for="OrganizerId" class="form-label">Organizador</label>
+                <select asp-for="OrganizerId" class="form-control">
+                    <option value="">Selecione um organizador</option>
+                   
+                        <option value="1">ShowBiz</option>
+                   
+                </select>
+                <span asp-validation-for="OrganizerId" class="text-danger">Por favor, selecione um organizador.</span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="CategoryId" class="form-label">Categoria</label>
+                <select asp-for="CategoryId" class="form-control">
+                    <option value="">Selecione uma categoria</option>
+                    @foreach (var item in categories)
+                    {
+                        <option value="@item.Id">@item.Name</option>
+                    }
+                </select>
+                <span asp-validation-for="CategoryId" class="text-danger">Por favor, selecione uma categoria.</span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="CityId" class="form-label">Cidade</label>
+                <select asp-for="CityId" class="form-control">
+                    <option value="">Selecione uma cidade</option>
+                    
+                        <option value="1">Luanda</option>
+                    
+                </select>
+                <span asp-validation-for="CityId" class="text-danger">Por favor, selecione uma cidade.</span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Address" class="form-label">Endereço</label>
+                <input asp-for="Address" class="form-control" />
+            </div>
+            <div class="form-check mb-3">
+                <input asp-for="IsPrivate" class="form-check-input" />
+                <label class="form-check-label" asp-for="IsPrivate">Evento privado</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+        
 
-
-
-         <div class='col-sm-4'>
-                        <div class="form-group">
-                            <label class="lblFieldLabel">Início* </label>
-                            <div class='input-group dateStart startDateAdd' id='datetimepicker3' style="width: 200px !important;">
-                                <input type='text' class="form-control dtPickerStartDate" placeholder="Início*" style="display: inline !important;" autocomplete="off" id="datePicker_startA_NewEvent" />
-                                
-                                    <span class="fa fa-calendar"></span>
-                                
-                            </div>
-                        </div>
-                    </div>
-
-
-
-        <div class="col-md-12">
+      @*  <div class="col-md-12">
             <label>Título</label>
             <input type="text" placeholder="Título do evento..." class="form-control" />
         </div>
@@ -71,7 +118,7 @@
         <div class="col-md-12">            
             <button class="btn btn-primary" style="float:right;" title="Salvar evento">Salvar</button>
             <button class="btn btn-primary" title="Limpar campos" style="float:right; margin-right:10px;">Limpar</button>
-            </div>
+            </div>*@
         
     </div>
 </div>
