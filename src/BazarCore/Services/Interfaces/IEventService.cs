@@ -10,5 +10,7 @@ namespace BazarCore.Services.Interfaces
         Task<ResultService<PaginatedList<EventItemDTO>>> GetAllEvents(SearchEvents? search = null, bool onlyActives = false, int pageIndex = 1, int pageSize = 50);
         Task<ResultService<EventDetailsDTO>> GetEventDetails(int Id);
         Task<ResultService<Event>> AddAsync(AddEventDTO addEventDTO);
+
+        Task<bool> RemoveAsync(int Id);
     }
 }

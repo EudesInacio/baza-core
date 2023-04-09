@@ -169,7 +169,20 @@ namespace BazarCore.Data.Repository
         public async Task DeleteAsync(TEntity entity)
         {
             _myContext.Set<TEntity>().Remove(entity);
+
+            try
+            {
+
             await _myContext.SaveChangesAsync();
+                
+            }
+            catch (Exception ex)
+            {
+
+                
+                throw;
+            }
+
         }
     }
 }

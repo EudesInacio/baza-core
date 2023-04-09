@@ -1,4 +1,5 @@
 ﻿@using BazarCore.Models.DTO
+@inject HttpClient httpClient;
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @addTagHelper *, AuthoringTagHelpers
 @model PaginatedList<EventItemDTO>
@@ -6,7 +7,7 @@
 @{    
     ViewData["Title"] = "AdminEvents";
     Layout = "../Shared/_Layout.cshtml";
-    ViewBag.CurrentMenu = 1;
+    ViewBag.CurrentMenu = 1;    
 }
 
 <div class="container-fluid">
@@ -46,7 +47,7 @@
                                         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 30.3333px;">Organizador</th>
                                         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 68.3333px;">Categoria</th>
                                         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 66.3333px;">Endereço</th>
-                                        <th class="sorting" tabindex="0" style="width:120px !important;" aria-controls="dataTable" rowspan="1" aria-label="Salary: activate to sort column ascending" style="width: 66.3333px;">&nbsp;</th>
+                                        <th class="sorting" tabindex="0" style="width:60px !important;" aria-controls="dataTable" rowspan="1" aria-label="Salary: activate to sort column ascending">&nbsp;</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
@@ -58,7 +59,7 @@
                                         <th rowspan="1" colspan="1">Organizador</th>
                                         <th rowspan="1" colspan="1">Categoria</th>
                                         <th rowspan="1" colspan="1">Endereço</th>
-                                        <th rowspan="1" style="width:120px !important;">&nbsp;</th>
+                                        <th rowspan="1" style="width:60px !important;">&nbsp;</th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
@@ -73,7 +74,7 @@
                                             <td>@item.FullAdress</td>
                                             <td>@item.Category</td>
                                             <td>
-                                                <a href="#" title="Novo evento" class="btn btn-primary btn-circle"><i class="fa fa-plus"></i></a> <a href="#" title="Editar" class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></a> <a href="#" title="Remover" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></a>
+                                                <a href="#" title="Editar" class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></a> <a href="/Admin/AdminEvents/Remove?eventId=@item.Id" title="Remover" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></a>
                                             </td>
                                         </tr>
                                     }

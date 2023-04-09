@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 using System.Linq.Expressions;
 using System.Net;
+using System.Text.RegularExpressions;
 
 namespace BazarCore.Services
 {
@@ -158,6 +159,56 @@ namespace BazarCore.Services
 
 
         }
+
+        public async Task<bool> RemoveAsync(int Id)
+       {
+            var result = new ResultService<EventDetailsDTO>();
+
+            try
+            {
+                
+                //Expression<Func<Event, bool>> filter = x => x.Id == Id && !x.IsDeleted;
+                //Func<IQueryable<Event>, IOrderedQueryable<Event>> orderBy =
+                //    x => x.OrderByDescending(x => x.CreatedAt);
+                //Expression<Func<Event, EventDetailsDTO>> select = x => new EventDetailsDTO(x);
+                //var include = new List<string> { "EventSessions.Tickets", "Category", "City", "Organizer" };
+
+                //var eventItem = await _repository.FindAsync(select, include, filter);
+
+                //result.Data = eventItem;
+                //result.Success = true;
+                //result.Status = HttpStatusCode.OK;
+
+                var eventEntityDelete = new Event
+                {
+                    //Title = eventItem.Title,
+                    Id= Id,
+                    //OrganizerId = eventItem.OrganizerId,
+                    //CategoryId = eventItem.CategoryId,
+                    //CityId = eventItem.CityId,
+                    //Adress = eventItem.Address,
+                    //IsPrivate = eventItem.IsPrivate,
+                    IsActive = true,
+                    //Description = eventItem.Description,
+                   // EventSessions = addEventDTO.EventSessions
+                };
+
+                await _repository.DeleteAsync(eventEntityDelete);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                //result.Errors = new List<string> { ex.Message };
+                //result.Success = false;
+                //result.Status = HttpStatusCode.InternalServerError;
+
+                return false;
+
+            }
+
+            //return result;
+        }
+
         public async Task<ResultService<EventDetailsDTO>> GetEventDetails(int Id)
         {
             var result = new ResultService<EventDetailsDTO>();

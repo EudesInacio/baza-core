@@ -6,7 +6,7 @@
     ViewData["Title"] = "AdminEvents";
     Layout = "../Shared/_Layout.cshtml";
     var categories = ViewBag.Categories as List<CategoryDTO>;
-
+    var teste = "ednilson Belo";
 }
 
 <div class="container-fluid">
@@ -16,25 +16,25 @@
         <form method="post" action="create/" formaction="create" enctype="multipart/form-data">
             <div class="mb-3">
                 <label asp-for="Title" class="form-label">Título</label>
-                <input asp-for="Title" class="form-control" />
+                <input asp-for="Title" class="form-control"  required   />
                 <span asp-validation-for="Title" class="text-danger">Por favor, insira um título válido (entre 3 e 64 caracteres).</span>
             </div>
             <div class="mb-3">
                 <label asp-for="Image" class="form-label">Imagem</label>
-                <input asp-for="Image" type="file" class="form-control" />
+                <input asp-for="Image" type="file" class="form-control" required />
                 <span asp-validation-for="Image" class="text-danger">Por favor, selecione uma imagem.</span>
             </div>
             <div class="mb-3">
                 <label asp-for="Banner" class="form-label">Banner</label>
-                <input asp-for="Banner" type="file" class="form-control" />
+                <input asp-for="Banner" type="file" class="form-control" required />
             </div>
             <div class="mb-3">
                 <label asp-for="Description" class="form-label">Descrição</label>
-                <textarea asp-for="Description" class="form-control"></textarea>
+                <textarea asp-for="Description" class="form-control" required></textarea>
             </div>
             <div class="mb-3">
                 <label asp-for="OrganizerId" class="form-label">Organizador</label>
-                <select asp-for="OrganizerId" class="form-control">
+                <select asp-for="OrganizerId" class="form-control"required >
                     <option value="">Selecione um organizador</option>
                    
                         <option value="1">ShowBiz</option>
@@ -44,28 +44,32 @@
             </div>
             <div class="mb-3">
                 <label asp-for="CategoryId" class="form-label">Categoria</label>
-                <select asp-for="CategoryId" class="form-control">
+                <select asp-for="CategoryId" class="form-control" required>
                     <option value="">Selecione uma categoria</option>
-                    @foreach (var item in categories)
+
+                    @if (categories != null)
                     {
-                        <option value="@item.Id">@item.Name</option>
-                    }
+                        @foreach (var item in categories)
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    }                                        
                 </select>
                 <span asp-validation-for="CategoryId" class="text-danger">Por favor, selecione uma categoria.</span>
             </div>
             <div class="mb-3">
-                <label asp-for="CityId" class="form-label">Cidade</label>
-                <select asp-for="CityId" class="form-control">
+                <label asp-for="CityId" class="form-label">Província</label>
+                <select asp-for="CityId" class="form-control" required>
                     <option value="">Selecione uma cidade</option>
                     
                         <option value="1">Luanda</option>
                     
                 </select>
-                <span asp-validation-for="CityId" class="text-danger">Por favor, selecione uma cidade.</span>
+                <span asp-validation-for="CityId" class="text-danger">Por favor, selecione uma província.</span>
             </div>
             <div class="mb-3">
                 <label asp-for="Address" class="form-label">Endereço</label>
-                <input asp-for="Address" class="form-control" />
+                <input asp-for="Address" class="form-control" required />
             </div>
             <div class="form-check mb-3">
                 <input asp-for="IsPrivate" class="form-check-input" />
